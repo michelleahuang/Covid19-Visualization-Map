@@ -21,8 +21,7 @@ In addition, this project will include:
 
  ## Wireframes
 
- !(visualization-map-wireframe.png)
-
+ ![](visualization-map-wireframe.png)
 
 ## Technologies, Libraries, APIs
 
