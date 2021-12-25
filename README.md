@@ -26,14 +26,14 @@ In addition, this project will include:
  - Nav links include links to this project's Github repo and my LinkedIn
  - When page is first loaded, instead of a line graph showing, it will be the instructions page
  - When line graph is loaded, on the right, there will be clickable rectangles used to toggle between years
- - Below the title, there will be an Instructions button to reshow the Instructions if needed and a button to populate the countries on the globe
+ - Below the title, there will be an Instructions button to reshow the instructions if needed and a button to populate the countries on the globe
 
 ## Technologies, Libraries, APIs
 
 This project will be implemented with the following technologies:
 - [Three.js](https://d3js.org/) to render the world globe
 - [Chart.js](https://www.chartjs.org/) to render data visualization charts
-- `Webpack` and `Babel` to bundle and transpile theh source JavaScript code
+- `Webpack` and `Babel` to bundle and transpile the source JavaScript code
 - `npm` to manage project dependencies 
 - Country COVID-19 data obtained through the [JHU CSSE COVID-19 Dataset](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series)
 
