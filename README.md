@@ -2,7 +2,7 @@
 
 ## Background
 
-[Live Site]: (link will be updated here)
+Live Site: (link will be updated here)
 
 Since its emergence, COVID-19 has greatly impacted the state of the world. This interactive site aims to visualize the rise in COVID-19 cases in different countries around the world, starting from 2020, when the virus first started to spread, to the end of the year 2021. Click on a specific country on the globe to view its rise in cases over the last two years!
 
@@ -23,10 +23,30 @@ In addition, this project will include:
 
  ![](visualization-map-wireframe.png)
 
+ - Nav links include links to this project's Github repo and my LinkedIn
+ - When page is first loaded, instead of a line graph showing, it will be the instructions page
+ - When line graph is loaded, on the right, there will be clickable rectangles used to toggle between years
+ - Below the title, there will be an Instructions button to reshow the Instructions if needed and a button to populate the countries on the globe
+
 ## Technologies, Libraries, APIs
 
+This project will be implemented with the following technologies:
+- [Three.js](https://d3js.org/) to render the world globe
+- [Chart.js](https://www.chartjs.org/) to render data visualization charts
+- `Webpack` and `Babel` to bundle and transpile theh source JavaScript code
+- `npm` to manage project dependencies 
+- Country COVID-19 data obtained through the [JHU CSSE COVID-19 Dataset](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series)
 
 ## Implementation Timeline
 
+- **Thursday Afternoon and Weekend**: Finish setting up project, including getting Webpack up and running. Create world globe and add its functionalities with countries. Import and clean/process data from COVID API. Create instructions box.
+- **Monday**: Create line graph for each country for 2020. Create buttons for 2021 and 2021.
+- **Tuesday**: Create line graph for each country for 2021. 
+- **Wednesday**: Work on CSS styling.
+- **Thursday**: Debug, continue working on styling, and add in nav links for LinkedIn and Github repo. Make site mobile friendly if there's time.
 
 ## Bonus Features
+- Include additional data, ie. number of recoveries and number of deaths per country
+- Have the graphs continue past 2021 into 2022 and continuously be updated 
+- Allow for data comparison between different countries
+- Mobile friendly
