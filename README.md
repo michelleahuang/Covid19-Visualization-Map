@@ -41,8 +41,8 @@ This project will be implemented with the following technologies:
 ## Implementation Timeline
 
 - **Thursday Afternoon and Weekend**: Finish setting up project, including getting Webpack up and running. Create world globe and add its functionalities with countries. Import and clean/process data from COVID API. Create instructions box.
-- **Monday**: Create line graph for each country for 2020. Create buttons for 2021 and 2021.
-- **Tuesday**: Create line graph for each country for 2021. 
+- **Monday**: Create line graph for each country for 2020. Create button for 2020 graph. 
+- **Tuesday**: Create line graph for each country for 2021. Create button for 2021 graph. 
 - **Wednesday**: Work on CSS styling.
 - **Thursday**: Debug, continue working on styling, and add in nav links for LinkedIn and Github repo. Make site mobile friendly if there's time.
 
