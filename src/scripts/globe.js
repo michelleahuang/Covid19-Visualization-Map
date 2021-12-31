@@ -61,6 +61,17 @@ export default class Globe {
 
         scene.add(pointLight1, pointLight2, pointLight3);
 
+        // Add Background Stars
+        const starGeometry = new THREE.SphereGeometry(20, 60, 60); // values have to be bigger than globe
+        const starTexture = new THREE.TextureLoader().load("src/images/galaxy-jpg.jpg");
+        const starMaterial = new THREE.MeshBasicMaterial({
+            map: starTexture,
+            side: THREE.BackSide
+        });
+
+        const starBackground = new THREE.Mesh(starGeometry, starMaterial);
+        scene.add(starBackground);
+
         // Create Controls
         const controls = new OrbitControls(camera, canvas);
 
