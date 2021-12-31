@@ -35,8 +35,7 @@ This project will be implemented with the following technologies:
 - [Chart.js](https://www.chartjs.org/) to render data visualization charts
 - `Webpack` and `Babel` to bundle and transpile the source JavaScript code
 - `npm` to manage project dependencies 
-- Fetch API to import and clean data
-- Country COVID-19 data obtained through the [JHU CSSE COVID-19 Dataset](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series)
+- Country COVID-19 data obtained through [JHU CSSE COVID-19 Data](https://github.com/CSSEGISandData/COVID-19)
 
 ## Implementation Timeline
 
