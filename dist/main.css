@@ -108,6 +108,10 @@ h1 {
     display: none;
 }
 
+#line-graph {
+    background-color: white;
+}
+
 
 /*!*********************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/header_nav.css ***!

@@ -23,13 +23,11 @@ export default function getData() {
                 countryData.push(country, location, cases); // each index is a single country
 
                 finalData.push(countryData);
-
             })
+            
         //     // console.log(finalData); // need to figure out how to get this out of the promise - 281 countries
         //     // console.log(finalData[1]) // first country - afghanistan 
         //     // console.log(finalData[0]) // gives you the headers, ie. the dates and labels
 
         })
-
-
 }

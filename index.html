@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./dist/main.css" />
     <script defer src="./dist/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
     <title>Covid-19 Data Visualization Map</title>
 </head>
 
@@ -34,6 +35,10 @@
                 the globe with its countries. Select a particular country of your choice to see a line chart showcasing its general trend in COVID-19 cases.
             </p>
             <h3>Enjoy!</h3>
+        </div>
+
+        <div id="line-graph">
+            <canvas id="chart" width="640" height="600"></canvas>
         </div>
     </div>
 
