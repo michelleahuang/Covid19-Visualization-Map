@@ -1,4 +1,4 @@
-export default function instructions () {
+export default function instructions() {
     let instructionsButton = document.getElementById("instructions-button");
 
     instructionsButton.addEventListener("click", (e) => {
