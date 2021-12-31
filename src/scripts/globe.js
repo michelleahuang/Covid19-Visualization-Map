@@ -50,7 +50,7 @@ export default class Globe {
         const ambientLight = new THREE.AmbientLight(0xffffff);
         scene.add(ambientLight);
 
-        const pointLight1 = new THREE.PointLight(0x0061C1, 0.5, 0);
+        const pointLight1 = new THREE.PointLight(0x0061C1, 0.7, 0);
         pointLight1.position.set(150, 0, -150);
 
         const pointLight2 = new THREE.PointLight(0x0061C1, 0.5, 0);

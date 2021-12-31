@@ -50,23 +50,32 @@ table {
 	border-spacing: 0;
 }
 
-/*!*****************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/styles.css ***!
-  \*****************************************************************************************************/
+/*!******************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/general.css ***!
+  \******************************************************************************************************/
 body {
     background-image: url("../src/images/galaxy-jpg.jpg");
 }
 
 h1 {
     text-align: center;
-    font-size: 40px;
-    font-weight: bold;
+    font-size: 50px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
     color: white;
     margin-top: 20px;
 }
 
 canvas {
     background-color: blue;
+}
+
+
+/*!*********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/header_nav.css ***!
+  \*********************************************************************************************************/
+button {
+    font-family: 
 }
 
 #header-nav {
