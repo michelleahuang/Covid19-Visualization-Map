@@ -3,14 +3,14 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 const CONSTANTS = {
     WIDTH: 640,
-    HEIGHT: 720
+    HEIGHT: 600
 }
 
 export default class Globe {
     constructor(canvas) {
         // Set Up
         const scene = new THREE.Scene(); // where objects will be placed
-        const camera = new THREE.PerspectiveCamera(80, CONSTANTS.WIDTH / CONSTANTS.HEIGHT, 0.1, 1000);
+        const camera = new THREE.PerspectiveCamera(105, CONSTANTS.WIDTH / CONSTANTS.HEIGHT, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true }); // displays the globe, puts into existence the objects we want
         renderer.setSize(CONSTANTS.WIDTH, CONSTANTS.HEIGHT);
         renderer.setPixelRatio(window.devicePixelRatio);
@@ -29,15 +29,18 @@ export default class Globe {
             specular: new THREE.Color('grey')
         })
         const globe = new THREE.Mesh(globeGeometry, globeMaterial);
+        scene.add(globe);
 
-        // Create Lights
-        const lights = [];
+        // Add Lights
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
+        scene.add(ambientLight);
+
+        const pointLight = new THREE.PointLight(0xffffff, 1);
+        pointLight.position.set(200, 200, 400);
+        scene.add(pointLight);
 
         // Create Clouds
 
-
-        // Add Globe to Scene
-        scene.add(globe);
 
 
         // // Create Controls
@@ -50,6 +53,7 @@ export default class Globe {
         camera.position.z = 15;
 
         // Functions 
+
 
         function animate() {
             requestAnimationFrame( animate );
