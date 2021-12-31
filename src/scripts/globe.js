@@ -3,7 +3,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 const CONSTANTS = {
     WIDTH: 640,
-    HEIGHT: 570
+    HEIGHT: 490
 }
 
 export default class Globe {
@@ -20,7 +20,7 @@ export default class Globe {
         const globeBumpMap = new THREE.TextureLoader().load("src/images/earthbump.jpeg");
         const globeSpecularMap = new THREE.TextureLoader().load("src/images/earthspec.jpeg");
         
-        const globeGeometry = new THREE.SphereGeometry(10, 50, 50); // radius = 10
+        const globeGeometry = new THREE.SphereGeometry(13, 50, 50); // radius = 13
         const globeMaterial = new THREE.MeshPhongMaterial({
             map: globeMap, 
             bumpMap: globeBumpMap,
@@ -31,10 +31,10 @@ export default class Globe {
         const globe = new THREE.Mesh(globeGeometry, globeMaterial);
         scene.add(globe);
 
-        camera.position.z = 15;
+        camera.position.z = 18;
 
         // Create Clouds
-        const cloudGeometry = new THREE.SphereGeometry(10, 50, 50);
+        const cloudGeometry = new THREE.SphereGeometry(13, 50, 50);
         const cloudTexture = new THREE.TextureLoader().load("src/images/earthclouds.jpeg");
         const cloudMaterial = new THREE.MeshLambertMaterial({
             color: 0xffffff, 
@@ -50,13 +50,13 @@ export default class Globe {
         const ambientLight = new THREE.AmbientLight(0xffffff);
         scene.add(ambientLight);
 
-        const pointLight1 = new THREE.PointLight(0x0061C1, 0.7, 0);
+        const pointLight1 = new THREE.PointLight(0x0061C1, 0.5, 0);
         pointLight1.position.set(150, 0, -150);
 
         const pointLight2 = new THREE.PointLight(0x0061C1, 0.5, 0);
         pointLight2.position.set(150, 150, 150);
 
-        const pointLight3 = new THREE.PointLight(0x0061C1, 0.5, 0);
+        const pointLight3 = new THREE.PointLight(0x0061C1, 0.7, 0);
         pointLight3.position.set(-150, -150, 50);
 
         scene.add(pointLight1, pointLight2, pointLight3);
@@ -76,8 +76,8 @@ export default class Globe {
         const controls = new OrbitControls(camera, canvas);
 
         // Restrict zoom distance
-        controls.minDistance = 12;
-        controls.maxDistance = 20;
+        controls.minDistance = 15;
+        controls.maxDistance = 24;
         controls.enablePan = false;
         controls.update()
         controls.saveState();

@@ -1,0 +1,29 @@
+#footer-nav {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Oswald', sans-serif;
+}
+
+a {
+    color: white;
+}
+
+#data-source {
+    color: white;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+#personal-links ul {
+    display: flex;
+    margin: 10px;
+}
+
+#github {
+    margin-right: 10px;
+}
+
+#linkedin {
+    margin-left: 10px;
+    margin-right: 10px;
+}
