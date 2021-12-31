@@ -54,12 +54,14 @@ table {
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/styles.css ***!
   \*****************************************************************************************************/
 body {
+    background-image: url("../src/images/galaxy-jpg.jpg");
 }
 
 h1 {
     text-align: center;
     font-size: 40px;
     font-weight: bold;
+    color: white;
     margin-top: 20px;
 }
 
