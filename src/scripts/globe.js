@@ -31,29 +31,42 @@ export default class Globe {
         const globe = new THREE.Mesh(globeGeometry, globeMaterial);
         scene.add(globe);
 
-        // Add Lights
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
-        scene.add(ambientLight);
-
-        const pointLight = new THREE.PointLight(0xffffff, 1);
-        pointLight.position.set(200, 200, 400);
-        scene.add(pointLight);
-
-        // Create Clouds
-
-
-
-        // // Create Controls
-        const controls = new OrbitControls(camera, renderer.domElement);
-
-
-
-
-
         camera.position.z = 15;
 
-        // Functions 
+        // Create Clouds
+        const cloudGeometry = new THREE.SphereGeometry(10, 32, 32);
+        const cloudTexture = new THREE.TextureLoader().load()
 
+
+
+        // Add Lights
+        const ambientLight = new THREE.AmbientLight(0xffffff, 1);
+        scene.add(ambientLight);
+
+        const pointLight1 = new THREE.PointLight(0x004d99, 1);
+        pointLight1.position.set(200, 0, -400);
+
+        const pointLight2 = new THREE.PointLight(0x004d99, 1);
+        pointLight2.position.set(200, 200, 400);
+
+        const pointLight3 = new THREE.PointLight(0x004d99, 1);
+        pointLight3.position.set(-200, -200, -50);
+
+        scene.add(pointLight1, pointLight2, pointLight3);
+
+
+        // Create Controls
+        const controls = new OrbitControls(camera, renderer.domElement);
+
+        // Restrict zoom distance
+        controls.minDistance = 12;
+        controls.maxDistance = 20;
+        controls.enablePan = false;
+        controls.update()
+        controls.saveState();
+
+
+        // Functions 
 
         function animate() {
             requestAnimationFrame( animate );
