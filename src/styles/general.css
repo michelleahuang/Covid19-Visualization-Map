@@ -15,3 +15,12 @@ canvas {
     background-color: blue;
 }
 
+#main-body {
+    display: flex;
+}
+
+#instructions {
+    border: 1px solid white;
+    color: white;
+}
+

@@ -16,12 +16,12 @@ button {
     
 }
 
-#instructions {
+#instructions-button {
     margin: 10px;
     padding: 10px;
 }
 
-#populate-countries {
+#populate-countries-button {
     margin: 10px;
     padding: 10px;
 }

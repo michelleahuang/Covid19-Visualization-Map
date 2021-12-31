@@ -84,7 +84,6 @@ export default class Globe {
 
 
         // Functions 
-
         function animate() {
             requestAnimationFrame( animate );
             controls.update();

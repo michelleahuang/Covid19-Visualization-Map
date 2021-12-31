@@ -15,13 +15,30 @@
 
 <body>
     <h1>COVID-19 Data Visualization Map</h1>
+
     <div id="header-nav">
-        <button id="instructions">Instructions</button>
-        <button id="populate-countries">Populate Countries</button>
+        <button id="instructions-button">Instructions</button>
+        <button id="populate-countries-button">Populate Countries</button>
     </div>
-    <div>
-        <canvas id="globe-canvas" width="640" height="600"></canvas>
+
+    <div id="main-body">
+        <div>
+            <canvas id="globe-canvas" width="640" height="600"></canvas>
+        </div>
+
+        <div id="instructions">
+            <h3>Welcome!</h3>
+            <br>
+            <p>Have you ever been curious about the rise in COVID-19 cases in various countries?</p>
+            <br>
+            <p>With this data visualization, all your questions will be answered!</p>
+            <p>Click on the "Populate Countries" button to populate the globe with its countries.</p>
+            <p>Select a particular country of your choice to see a line chart highlighting its general trend in COVID-19 cases.</p>
+            <br>
+            <p>Enjoy!</p>
+        </div>
     </div>
+
     <div id="footer-nav">
         <p id="data-source">Country COVID-19 data obtained through 
             <a href="https://github.com/CSSEGISandData">JHU CSSE COVID-19 Dataset</a>
