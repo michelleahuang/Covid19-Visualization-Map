@@ -20,43 +20,49 @@ export default class Globe {
         const globeBumpMap = new THREE.TextureLoader().load("src/images/earthbump.jpeg");
         const globeSpecularMap = new THREE.TextureLoader().load("src/images/earthspec.jpeg");
         
-        const globeGeometry = new THREE.SphereGeometry(10, 32, 32); // radius = 10
+        const globeGeometry = new THREE.SphereGeometry(10, 50, 50); // radius = 10
         const globeMaterial = new THREE.MeshPhongMaterial({
             map: globeMap, 
             bumpMap: globeBumpMap,
             bumpScale: 0.10,
             specularMap: globeSpecularMap,
             specular: new THREE.Color('grey')
-        })
+        });
         const globe = new THREE.Mesh(globeGeometry, globeMaterial);
         scene.add(globe);
 
         camera.position.z = 15;
 
         // Create Clouds
-        const cloudGeometry = new THREE.SphereGeometry(10, 32, 32);
-        const cloudTexture = new THREE.TextureLoader().load()
-
-
+        const cloudGeometry = new THREE.SphereGeometry(10, 50, 50);
+        const cloudTexture = new THREE.TextureLoader().load("src/images/earthclouds.jpeg");
+        const cloudMaterial = new THREE.MeshLambertMaterial({
+            color: 0xffffff, 
+            map: cloudTexture,
+            transparent: true,
+            opacity: 0.5
+        });
+        const clouds = new THREE.Mesh(cloudGeometry, cloudMaterial);
+        clouds.scale.set(1.015, 1.015, 1.015); // putting clouds on top of the globe
+        globe.add(clouds);
 
         // Add Lights
         const ambientLight = new THREE.AmbientLight(0xffffff, 1);
         scene.add(ambientLight);
 
-        const pointLight1 = new THREE.PointLight(0x004d99, 1);
+        const pointLight1 = new THREE.PointLight(0x004d99, 0.5, 0);
         pointLight1.position.set(200, 0, -400);
 
-        const pointLight2 = new THREE.PointLight(0x004d99, 1);
+        const pointLight2 = new THREE.PointLight(0x004d99, 0.5, 0);
         pointLight2.position.set(200, 200, 400);
 
-        const pointLight3 = new THREE.PointLight(0x004d99, 1);
+        const pointLight3 = new THREE.PointLight(0x004d99, 0.7, 0);
         pointLight3.position.set(-200, -200, -50);
 
         scene.add(pointLight1, pointLight2, pointLight3);
 
-
         // Create Controls
-        const controls = new OrbitControls(camera, renderer.domElement);
+        const controls = new OrbitControls(camera, canvas);
 
         // Restrict zoom distance
         controls.minDistance = 12;
