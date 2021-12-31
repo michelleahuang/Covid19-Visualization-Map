@@ -24,7 +24,7 @@ export default class Globe {
         const globeMaterial = new THREE.MeshPhongMaterial({
             map: globeMap, 
             bumpMap: globeBumpMap,
-            bumpScale: 0.10,
+            bumpScale: 0.05,
             specularMap: globeSpecularMap,
             specular: new THREE.Color('grey')
         });
@@ -47,17 +47,17 @@ export default class Globe {
         globe.add(clouds);
 
         // Add Lights
-        const ambientLight = new THREE.AmbientLight(0xffffff, 1);
+        const ambientLight = new THREE.AmbientLight(0xffffff);
         scene.add(ambientLight);
 
-        const pointLight1 = new THREE.PointLight(0x004d99, 0.5, 0);
-        pointLight1.position.set(200, 0, -400);
+        const pointLight1 = new THREE.PointLight(0x0061C1, 0.5, 0);
+        pointLight1.position.set(150, 0, -150);
 
-        const pointLight2 = new THREE.PointLight(0x004d99, 0.5, 0);
-        pointLight2.position.set(200, 200, 400);
+        const pointLight2 = new THREE.PointLight(0x0061C1, 0.5, 0);
+        pointLight2.position.set(150, 150, 150);
 
-        const pointLight3 = new THREE.PointLight(0x004d99, 0.7, 0);
-        pointLight3.position.set(-200, -200, -50);
+        const pointLight3 = new THREE.PointLight(0x0061C1, 0.5, 0);
+        pointLight3.position.set(-150, -150, 50);
 
         scene.add(pointLight1, pointLight2, pointLight3);
 
@@ -77,7 +77,7 @@ export default class Globe {
         function animate() {
             requestAnimationFrame( animate );
             controls.update();
-            globe.rotation.y += 0.001;
+            globe.rotation.y += 0.0005;
             renderer.render( scene, camera );
         }
         animate();
