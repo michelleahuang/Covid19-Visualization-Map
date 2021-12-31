@@ -43,7 +43,7 @@ export default class Globe {
             opacity: 0.5
         });
         const clouds = new THREE.Mesh(cloudGeometry, cloudMaterial);
-        clouds.scale.set(1.015, 1.015, 1.015); // putting clouds on top of the globe
+        clouds.scale.set(1.005, 1.005, 1.005); // clouds layer is slightly bigger than globe
         globe.add(clouds);
 
         // Add Lights
@@ -62,7 +62,7 @@ export default class Globe {
         scene.add(pointLight1, pointLight2, pointLight3);
 
         // Add Background Stars
-        const starGeometry = new THREE.SphereGeometry(20, 60, 60); // values have to be bigger than globe
+        const starGeometry = new THREE.SphereGeometry(25, 60, 60); // values have to be bigger than globe
         const starTexture = new THREE.TextureLoader().load("src/images/galaxy-jpg.jpg");
         const starMaterial = new THREE.MeshBasicMaterial({
             map: starTexture,
