@@ -3,7 +3,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 const CONSTANTS = {
     WIDTH: 640,
-    HEIGHT: 600
+    HEIGHT: 570
 }
 
 export default class Globe {

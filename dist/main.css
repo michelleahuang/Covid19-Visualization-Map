@@ -68,6 +68,27 @@ h1 {
 canvas {
     background-color: blue;
 }
+
+#header-nav {
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    
+}
+
+#instructions {
+    margin: 10px;
+    padding: 10px;
+}
+
+#populate-countries {
+    margin: 10px;
+    padding: 10px;
+}
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
