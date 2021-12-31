@@ -49,3 +49,7 @@ h1 {
     font-weight: 300;
 }
 
+.instructions-box-hidden {
+    display: none;
+}
+
