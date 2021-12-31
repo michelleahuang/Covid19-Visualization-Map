@@ -11,10 +11,6 @@ h1 {
     margin-top: 20px;
 }
 
-canvas {
-    background-color: blue;
-}
-
 #main-body {
     display: flex;
     align-items: center;
