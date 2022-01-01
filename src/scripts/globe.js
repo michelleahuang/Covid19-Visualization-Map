@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { RectAreaLight } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import getData from "./data.js";
 
@@ -135,8 +136,9 @@ export default class Globe {
         const raycaster = new THREE.Raycaster();
 
         function onMouseMove(e) {
-            mouse.x = ( e.clientX / CONSTANTS.WIDTH ) * 2 - 1;
-            mouse.y = - ( e.clientY / CONSTANTS.HEIGHT ) * 2 + 1;
+            let rect = renderer.domElement.getBoundingClientRect();
+            mouse.x = ( (e.clientX - rect.left) / (rect.width - rect.left) ) * 2 - 1;
+            mouse.y = - ( (e.clientY - rect.top) / (rect.bottom - rect.top) ) * 2 + 1;
         }
 
         window.addEventListener("mousemove", onMouseMove, false);
@@ -151,11 +153,12 @@ export default class Globe {
         }
 
         function animate() {
-            requestAnimationFrame( animate );
             controls.update();
             globe.rotation.y += 0.0005;
             hoverCountry();
             renderer.render( scene, camera );
+            requestAnimationFrame( animate );
+
         }
 
         animate();
