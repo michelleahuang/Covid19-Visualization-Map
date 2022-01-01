@@ -147,7 +147,7 @@ export default class Globe {
             for (let i = 0; i < clouds.children.length; i++) {
                 let countryDot = clouds.children[i];
                 if (countryDot.material) {
-                    countryDot.material.opacity = 1.0;
+                    countryDot.material.color = new THREE.Color(0xFFFF00);
                 }
             }
         }
@@ -156,8 +156,7 @@ export default class Globe {
             raycaster.setFromCamera(mouse, camera);
             const intersects = raycaster.intersectObjects(clouds.children);
             for (let i = 0; i < intersects.length; i++) {
-                intersects[0].object.material.transparent = true;
-                intersects[0].object.material.opacity = 0.5;
+                intersects[0].object.material.color = new THREE.Color(0xFF0000);
             }
         }
 
