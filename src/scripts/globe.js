@@ -83,16 +83,7 @@ export default class Globe {
         controls.update()
         controls.saveState();
 
-
         // Functions 
-        function animate() {
-            requestAnimationFrame( animate );
-            controls.update();
-            globe.rotation.y += 0.0005;
-            renderer.render( scene, camera );
-        }
-
-        animate();
 
         function findCountryPosition(globe, country, province, latitude, longitude) {
             let countryGeometry = new THREE.SphereGeometry(0.1, 50, 50); // radius of 0.1
@@ -138,6 +129,36 @@ export default class Globe {
         };
 
         addCountries();
+
+        // Raycaster 
+        const mouse = new THREE.Vector2(); // holds our mouse coordinates
+        const raycaster = new THREE.Raycaster();
+
+        function onMouseMove(e) {
+            mouse.x = ( e.clientX / CONSTANTS.WIDTH ) * 2 - 1;
+            mouse.y = - ( e.clientY / CONSTANTS.HEIGHT ) * 2 + 1;
+        }
+
+        window.addEventListener("mousemove", onMouseMove, false);
+
+        function hoverCountry() {
+            raycaster.setFromCamera(mouse, camera);
+            const intersects = raycaster.intersectObjects(clouds.children);
+            for (let i = 0; i < intersects.length; i++) {
+                intersects[0].object.material.transparent = true;
+                intersects[0].object.material.opacity = 0.5;
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame( animate );
+            controls.update();
+            globe.rotation.y += 0.0005;
+            hoverCountry();
+            renderer.render( scene, camera );
+        }
+
+        animate();
 
     }
 }
