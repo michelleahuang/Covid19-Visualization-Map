@@ -56,6 +56,15 @@ h1 {
     background-color: white;
 }
 
+div#line-graph {
+    border: 1px solid white;
+    margin: 5px;
+}
 
+canvas#chart {
+    background-image: url("../src/images/galaxy-jpg.jpg");
+    padding: 5px;
+    /* background-color: black; */
+}
 
 

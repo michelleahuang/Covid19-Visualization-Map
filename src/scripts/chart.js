@@ -24,7 +24,8 @@ export default async function createChart(ctx) {
             fill: false,
             backgroundColor: 'rgba(8, 175, 238, 0.2)',
             borderColor: 'rgba(8, 43, 238, 1)',
-            borderWidth: 1
+            borderWidth: 1,
+            color: "white"
         }]
     },
     options: {
@@ -32,15 +33,28 @@ export default async function createChart(ctx) {
             x: {
                 title: {
                     display: true,
-                    text: 'Days'
-                }
+                    text: 'Day',
+                    color: 'white'
+                },
+                ticks: { color: 'white' }
             },
             y: {
                 title: {
                     display: true,
-                    text: 'Number of COVID-19 Cases'
+                    text: 'Number of COVID-19 Cases',
+                    color: 'white'
+                },
+                ticks: { color: 'white' },
+                grid: {
+                    color: 'rgb(105,105,105)'
                 }
             }
+        },
+        plugins: {
+            legend: {
+                labels: { color: 'white' }
+            }
+
         }
     }
     });
