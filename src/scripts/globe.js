@@ -143,6 +143,15 @@ export default class Globe {
 
         window.addEventListener("mousemove", onMouseMove, false);
 
+        function resetCountry() {
+            for (let i = 0; i < clouds.children.length; i++) {
+                let countryDot = clouds.children[i];
+                if (countryDot.material) {
+                    countryDot.material.opacity = 1.0;
+                }
+            }
+        }
+
         function hoverCountry() {
             raycaster.setFromCamera(mouse, camera);
             const intersects = raycaster.intersectObjects(clouds.children);
@@ -155,6 +164,7 @@ export default class Globe {
         function animate() {
             controls.update();
             globe.rotation.y += 0.0005;
+            resetCountry();
             hoverCountry();
             renderer.render( scene, camera );
             requestAnimationFrame( animate );
