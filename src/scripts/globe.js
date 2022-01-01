@@ -94,9 +94,38 @@ export default class Globe {
         animate();
     }
 
+    findCountryPosition(globe, country, latitude, longitude, color) {
+        let countryGeometry = new THREE.SphereGeometry(0.1, 50, 50); // radius of 0.1
+        let countryMaterial = new THREE.MeshBasicMaterial({
+            color: color // different country color for each continent
+        });
+        let countryDot = new THREE.Mesh(countryGeometry, countryMaterial);
+
+        let countryLatitude = latitude * (Math.PI / 180); // convert latitude to radians
+        let countryLongitude = (-longitude) * (MATH.PI / 180); // convert longitude to radians
+        let globeRadius = 13;
+
+        // Convert Cartesian to Spherical Coordinates
+        let positionX = globeRadius * Math.cos(countryLongitude) * Math.cos(countryLatitude);
+        let positionY = globeRadius * Math.sin(countryLatitude);
+        let positionZ = globeRadius * Math.cos(countryLatitude) * Math.sin(countryLongitude)
+
+        countryDot.position.set(positionX, positionY, positionZ);
+        countryDot.rotation.set(0, -countryLongitude, countryLatitude - (Math.PI * 0.5));
+    }
+
     async addCountries() {
         const finalData = await getData();
-        console.log(finalData);
-    }
+        const countryData = finalData.slice(1)
+
+        for (let i = 0; i < countryData.length; i++) {
+            let country = countryData[i];
+            let regionArray = country[0];
+            let region = regionArray[regionArray.length - 1][1];
+            console.log(region);
+            
+        }
+    }       
+
 }
 
