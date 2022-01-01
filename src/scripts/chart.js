@@ -12,7 +12,6 @@ export default async function createChart(ctx) {
     const country = finalData[1][2]; // Only gives me the first country (Afghanistan)
     const country2020 = country[0].slice(0, 345); // gives me Afghanistan's 2020 cases data
     const country2021 = country[0].slice(345); // gives me Afghanistan's 2021 cases data
-    // console.log(country2020)
     const yAxis = country2020
 
     const myChart = new Chart(ctx, {
@@ -23,10 +22,26 @@ export default async function createChart(ctx) {
             label: "COVID-19 Cases per Day in [Name of Country]",
             data: yAxis,
             fill: false,
-            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-            borderColor: 'rgba(255, 99, 132, 1)',
+            backgroundColor: 'rgba(8, 175, 238, 0.2)',
+            borderColor: 'rgba(8, 43, 238, 1)',
             borderWidth: 1
         }]
+    },
+    options: {
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: 'Days'
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'Number of COVID-19 Cases'
+                }
+            }
+        }
     }
     });
 
