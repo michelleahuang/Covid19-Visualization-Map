@@ -6,7 +6,7 @@ const canvas = document.getElementById("globe-canvas")
 const ctx = document.getElementById("chart").getContext("2d");
 
 const globe = new Globe(canvas);
-globe.addCountries();
+// globe.addCountries();
 
 instructions();
 createChart(ctx);

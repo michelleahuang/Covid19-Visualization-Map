@@ -91,52 +91,55 @@ export default class Globe {
             globe.rotation.y += 0.0005;
             renderer.render( scene, camera );
         }
+
         animate();
+
+        function findCountryPosition(globe, country, province, latitude, longitude) {
+            let countryGeometry = new THREE.SphereGeometry(0.1, 50, 50); // radius of 0.1
+            let countryMaterial = new THREE.MeshBasicMaterial({
+                color: 0xFFFF00 
+            });
+            let countryDot = new THREE.Mesh(countryGeometry, countryMaterial);
+
+            let countryLatitude = latitude * (Math.PI / 180); // convert latitude to radians
+            let countryLongitude = (-longitude) * (Math.PI / 180); // convert longitude to radians
+            let globeRadius = 13;
+
+            // Convert Cartesian to Spherical Coordinates
+            let positionX = globeRadius * Math.cos(countryLongitude) * Math.cos(countryLatitude);
+            let positionY = globeRadius * Math.sin(countryLatitude);
+            let positionZ = globeRadius * Math.cos(countryLatitude) * Math.sin(countryLongitude);
+
+            countryDot.position.set(positionX, positionY, positionZ);
+            countryDot.rotation.set(0, -countryLongitude, countryLatitude - (Math.PI * 0.5));
+
+            countryDot.userData.country = country;
+            countryDot.userData.provinceState = province;
+
+            clouds.add(countryDot);
+
+        };
+
+        async function addCountries() {
+            let finalData = await getData();
+            finalData = finalData.slice(1);
+
+            for (let i = 0; i < finalData.length; i++) {
+                let province = finalData[i];
+                let countryArray = province[0];
+                let country = countryArray[countryArray.length - 1][1];
+                let provinceState = countryArray[countryArray.length - 1][0];            
+
+                let coordinates = province[1];
+                let latitude = coordinates[coordinates.length - 1][0];
+                let longitude = coordinates[coordinates.length - 1][1];
+
+                findCountryPosition(globe, country, provinceState, latitude, longitude);
+            };
+        };
+
+        addCountries();
+
     }
-
-    findCountryPosition(globe, country, province, latitude, longitude) {
-        let countryGeometry = new THREE.SphereGeometry(0.1, 50, 50); // radius of 0.1
-        let countryMaterial = new THREE.MeshBasicMaterial({
-            color: 0xFFFF00 
-        });
-        let countryDot = new THREE.Mesh(countryGeometry, countryMaterial);
-
-        let countryLatitude = latitude * (Math.PI / 180); // convert latitude to radians
-        let countryLongitude = (-longitude) * (Math.PI / 180); // convert longitude to radians
-        let globeRadius = 13;
-
-        // Convert Cartesian to Spherical Coordinates
-        let positionX = globeRadius * Math.cos(countryLongitude) * Math.cos(countryLatitude);
-        let positionY = globeRadius * Math.sin(countryLatitude);
-        let positionZ = globeRadius * Math.cos(countryLatitude) * Math.sin(countryLongitude)
-
-        countryDot.position.set(positionX, positionY, positionZ);
-        countryDot.rotation.set(0, -countryLongitude, countryLatitude - (Math.PI * 0.5));
-
-        countryDot.userData.country = country;
-        countryDot.userData.province = provinceState;
-
-        clouds.add(countryDot);
-
-    }
-
-    async addCountries() {
-        let finalData = await getData();
-        finalData = finalData.slice(1)
-
-        for (let i = 0; i < finalData.length; i++) {
-            let province = finalData[i];
-            let countryArray = province[0];
-            let country = countryArray[countryArray.length - 1][1];
-            let provinceState = countryArray[countryArray.length - 1][0];            
-
-            let coordinates = province[1];
-            let latitude = coordinates[coordinates.length - 1][0];
-            let longitude = coordinates[coordinates.length - 1][1];
-
-            this.findCountryPosition(globe, country, provinceState, latitude, longitude);
-        }
-    }       
-
 }
 
