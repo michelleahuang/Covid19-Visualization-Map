@@ -110,7 +110,6 @@ export default class Globe {
             let positionY = globeRadius * Math.sin(countryLatitude);
             let positionZ = globeRadius * Math.cos(countryLatitude) * Math.sin(countryLongitude);
 
-
             countryDot.position.set(positionX, positionY, positionZ);
             countryDot.rotation.set(0, -countryLongitude, countryLatitude - (Math.PI * 0.5));
 
@@ -118,7 +117,6 @@ export default class Globe {
             countryDot.userData.provinceState = province;
 
             clouds.add(countryDot);
-
         };
 
         async function addCountries() {
