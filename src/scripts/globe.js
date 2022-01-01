@@ -155,12 +155,27 @@ export default class Globe {
 
         function hoverCountry() {
             raycaster.setFromCamera(mouse, camera);
-            const intersects = raycaster.intersectObjects(clouds.children);
+            let intersects = raycaster.intersectObjects(clouds.children);
             for (let i = 0; i < intersects.length; i++) {
                 intersects[0].object.material.color = new THREE.Color(0xFF0000);
                 intersects[0].object.scale.set(1.5, 1.5);
             }
         }
+
+        function onClick(e) {
+            e.preventDefault();
+            let rect = renderer.domElement.getBoundingClientRect();
+            mouse.x = ((e.clientX - rect.left) / (rect.width - rect.left)) * 2 - 1;
+            mouse.y = -((e.clientY - rect.top) / (rect.bottom - rect.top)) * 2 + 1;
+            raycaster.setFromCamera(mouse, camera);
+
+            let intersects = raycaster.intersectObjects(clouds.children);
+            for (let i = 0; i < intersects.length; i++) {
+                console.log(intersects[0]);
+            }
+        }
+
+        window.addEventListener("click", onClick, false);
 
         function animate() {
             controls.update();
@@ -169,11 +184,9 @@ export default class Globe {
             hoverCountry();
             renderer.render( scene, camera );
             requestAnimationFrame( animate );
-
         }
 
         animate();
-
     }
 }
 
