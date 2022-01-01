@@ -94,15 +94,15 @@ export default class Globe {
         animate();
     }
 
-    findCountryPosition(globe, country, latitude, longitude, color) {
+    findCountryPosition(globe, country, province, latitude, longitude) {
         let countryGeometry = new THREE.SphereGeometry(0.1, 50, 50); // radius of 0.1
         let countryMaterial = new THREE.MeshBasicMaterial({
-            color: color // different country color for each continent
+            color: 0xFFFF00 
         });
         let countryDot = new THREE.Mesh(countryGeometry, countryMaterial);
 
         let countryLatitude = latitude * (Math.PI / 180); // convert latitude to radians
-        let countryLongitude = (-longitude) * (MATH.PI / 180); // convert longitude to radians
+        let countryLongitude = (-longitude) * (Math.PI / 180); // convert longitude to radians
         let globeRadius = 13;
 
         // Convert Cartesian to Spherical Coordinates
@@ -112,18 +112,29 @@ export default class Globe {
 
         countryDot.position.set(positionX, positionY, positionZ);
         countryDot.rotation.set(0, -countryLongitude, countryLatitude - (Math.PI * 0.5));
+
+        countryDot.userData.country = country;
+        countryDot.userData.province = provinceState;
+
+        clouds.add(countryDot);
+
     }
 
     async addCountries() {
-        const finalData = await getData();
-        const countryData = finalData.slice(1)
+        let finalData = await getData();
+        finalData = finalData.slice(1)
 
-        for (let i = 0; i < countryData.length; i++) {
-            let country = countryData[i];
-            let regionArray = country[0];
-            let region = regionArray[regionArray.length - 1][1];
-            console.log(region);
-            
+        for (let i = 0; i < finalData.length; i++) {
+            let province = finalData[i];
+            let countryArray = province[0];
+            let country = countryArray[countryArray.length - 1][1];
+            let provinceState = countryArray[countryArray.length - 1][0];            
+
+            let coordinates = province[1];
+            let latitude = coordinates[coordinates.length - 1][0];
+            let longitude = coordinates[coordinates.length - 1][1];
+
+            this.findCountryPosition(globe, country, provinceState, latitude, longitude);
         }
     }       
 
