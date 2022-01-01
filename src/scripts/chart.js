@@ -2,12 +2,18 @@ import getData from "./data.js";
 
 export default async function createChart(ctx) {
     const finalData = await getData();
-    console.log(finalData[0][2]);
 
     const days = finalData[0][2];
+    const twentyTwenty = days[0].slice(0, 345)
+    const twentyTwentyOne = days[0].slice(345);
     
-    const xAxis = days;
-    // const yAxis
+    const xAxis = twentyTwenty;
+
+    const country = finalData[1][2]; // Only gives me the first country (Afghanistan)
+    const country2020 = country[0].slice(0, 345); // gives me Afghanistan's 2020 cases data
+    const country2021 = country[0].slice(345); // gives me Afghanistan's 2021 cases data
+    // console.log(country2020)
+    const yAxis = country2020
 
     const myChart = new Chart(ctx, {
     type: 'line',
@@ -15,7 +21,7 @@ export default async function createChart(ctx) {
         labels: xAxis,
         datasets: [{
             label: "COVID-19 Cases per Day in [Name of Country]",
-            data: [12, 19, 3, 5, 2, 3],
+            data: yAxis,
             fill: false,
             backgroundColor: 'rgba(255, 99, 132, 0.2)',
             borderColor: 'rgba(255, 99, 132, 1)',
