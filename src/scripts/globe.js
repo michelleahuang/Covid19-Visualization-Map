@@ -137,8 +137,8 @@ export default class Globe {
 
         function onMouseMove(e) {
             let rect = renderer.domElement.getBoundingClientRect();
-            mouse.x = ( (e.clientX - rect.left) / (rect.width - rect.left) ) * 2 - 1;
-            mouse.y = - ( (e.clientY - rect.top) / (rect.bottom - rect.top) ) * 2 + 1;
+            mouse.x = ((e.clientX - rect.left) / (rect.width - rect.left)) * 2 - 1;
+            mouse.y = -((e.clientY - rect.top) / (rect.bottom - rect.top)) * 2 + 1;
         }
 
         window.addEventListener("mousemove", onMouseMove, false);
@@ -149,6 +149,7 @@ export default class Globe {
                 if (countryDot.material) {
                     countryDot.material.color = new THREE.Color(0xFFFF00);
                 }
+                countryDot.scale.set(1.0, 1.0);
             }
         }
 
@@ -157,6 +158,7 @@ export default class Globe {
             const intersects = raycaster.intersectObjects(clouds.children);
             for (let i = 0; i < intersects.length; i++) {
                 intersects[0].object.material.color = new THREE.Color(0xFF0000);
+                intersects[0].object.scale.set(1.5, 1.5);
             }
         }
 
