@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import getData from "./data.js";
 
 const CONSTANTS = {
     WIDTH: 640,
@@ -91,7 +92,11 @@ export default class Globe {
             renderer.render( scene, camera );
         }
         animate();
+    }
 
+    async addCountries() {
+        const finalData = await getData();
+        console.log(finalData);
     }
 }
 
