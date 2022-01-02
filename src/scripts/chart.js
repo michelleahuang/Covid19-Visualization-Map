@@ -10,11 +10,16 @@ export default async function createChart(ctx, country, province) {
     const xAxis = twentyTwenty;
 
     let countryName = country;
-    let countryIndex = finalData.indexOf("countryName")
-    console.log(finalData);
-    // const country = finalData[1][2]; // Only gives me the first country (Afghanistan)
-    // const country2020 = country[0].slice(0, 345); // gives me Afghanistan's 2020 cases data
-    // const country2021 = country[0].slice(345); // gives me Afghanistan's 2021 cases data
+    let provinceName = province;
+    let countryIndex = finalData.indexOf(countryName);
+    // console.log(countryName);
+    // console.log(provinceName);
+    // console.log(countryIndex);
+
+    // const covidData = finalData[1][2]; // Only gives me the first country (Afghanistan)
+    // console.log(covidData);
+    // const countryCovid2020 = covidData[0].slice(0, 345); // gives me Afghanistan's 2020 cases data
+    // const countryCovid2021 = covidData[0].slice(345); // gives me Afghanistan's 2021 cases data
     // const yAxis = country2020
 
     /*
