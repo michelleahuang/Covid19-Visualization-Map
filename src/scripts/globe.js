@@ -129,8 +129,6 @@ export default class Globe {
             };
         };
 
-        addCountries();
-
         // Raycaster 
         const mouse = new THREE.Vector2(); // holds our mouse coordinates
         const raycaster = new THREE.Raycaster();
@@ -172,10 +170,19 @@ export default class Globe {
             let intersects = raycaster.intersectObjects(clouds.children);
             for (let i = 0; i < intersects.length; i++) {
                 console.log(intersects[0]);
+                let instructionsBox = document.getElementById("instructions");
+                instructionsBox.classList.add("instructions-box-hidden");                
             }
         }
 
         window.addEventListener("click", onClick, false);
+
+        // Showing Countries
+        let populateCountriesButton = document.getElementById("populate-countries-button");
+        populateCountriesButton.addEventListener("click", (e) => {
+            e.preventDefault()
+            addCountries()
+        });
 
         function animate() {
             controls.update();
