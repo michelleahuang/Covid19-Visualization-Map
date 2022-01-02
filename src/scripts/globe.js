@@ -163,7 +163,6 @@ export default class Globe {
 
         // Display chart for clicked on country
         function onClick(e) {
-            // e.preventDefault();
             let rect = renderer.domElement.getBoundingClientRect();
             mouse.x = ((e.clientX - rect.left) / (rect.width - rect.left)) * 2 - 1;
             mouse.y = -((e.clientY - rect.top) / (rect.bottom - rect.top)) * 2 + 1;
@@ -176,8 +175,8 @@ export default class Globe {
                 let country = intersects[0].object.userData.country;
                 let province = intersects[0].object.userData.provinceState;
 
-                console.log(country);
-                console.log(province);
+                // console.log(country);
+                // console.log(province);
 
                 const ctx = document.getElementById("chart").getContext("2d");
                 createChart(ctx, country, province);

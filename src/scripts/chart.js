@@ -1,3 +1,4 @@
+import { _ } from "core-js";
 import getData from "./data.js";
 
 export default async function createChart(ctx, country, province) {
@@ -14,10 +15,13 @@ export default async function createChart(ctx, country, province) {
     // let countryIndex = finalData.indexOf(countryName);
     let index = -1;
 
+    // console.log(finalData);
+
     for (let i = 0; i < finalData.length; i++) {
         let countryArray = finalData[i][0];
+
         let countryInfoArray = countryArray[countryArray.length - 1]
-        console.log(countryInfoArray[0]);
+        // console.log(countryInfoArray[0]);
         let provinceIndex = countryInfoArray.indexOf(provinceName);
         if (provinceName !== "") {
             console.log(provinceIndex)
