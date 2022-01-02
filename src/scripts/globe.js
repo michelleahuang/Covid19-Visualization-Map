@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { RectAreaLight } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import getData from "./data.js";
+import createChart from "./chart.js"
 
 const CONSTANTS = {
     WIDTH: 640,
@@ -160,6 +161,7 @@ export default class Globe {
             }
         }
 
+        // Display chart for clicked on country
         function onClick(e) {
             e.preventDefault();
             let rect = renderer.domElement.getBoundingClientRect();
@@ -170,6 +172,14 @@ export default class Globe {
             let intersects = raycaster.intersectObjects(clouds.children);
             for (let i = 0; i < intersects.length; i++) {
                 console.log(intersects[0]);
+                // where I'm going to display the chart
+                console.log(intersects[0].object.userData.country)
+                console.log(intersects[0].object.userData.province)
+
+                const ctx = document.getElementById("chart").getContext("2d");
+                // createChart(ctx, "Afghanistan", "");
+
+
                 let instructionsBox = document.getElementById("instructions");
                 instructionsBox.classList.add("instructions-box-hidden");                
             }

@@ -1,6 +1,6 @@
 import getData from "./data.js";
 
-export default async function createChart(ctx) {
+export default async function createChart(ctx, country, province) {
     const finalData = await getData();
 
     const days = finalData[0][2];
@@ -9,11 +9,15 @@ export default async function createChart(ctx) {
     
     const xAxis = twentyTwenty;
 
-    const country = finalData[1][2]; // Only gives me the first country (Afghanistan)
-    const country2020 = country[0].slice(0, 345); // gives me Afghanistan's 2020 cases data
-    const country2021 = country[0].slice(345); // gives me Afghanistan's 2021 cases data
-    const yAxis = country2020
+    let countryName = country;
+    let countryIndex = finalData.indexOf("countryName")
+    console.log(finalData);
+    // const country = finalData[1][2]; // Only gives me the first country (Afghanistan)
+    // const country2020 = country[0].slice(0, 345); // gives me Afghanistan's 2020 cases data
+    // const country2021 = country[0].slice(345); // gives me Afghanistan's 2021 cases data
+    // const yAxis = country2020
 
+    /*
     const myChart = new Chart(ctx, {
     type: 'line',
     data: {
@@ -58,6 +62,8 @@ export default async function createChart(ctx) {
         }
     }
     });
+
+    */
 
 }
 
