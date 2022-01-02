@@ -163,7 +163,7 @@ export default class Globe {
 
         // Display chart for clicked on country
         function onClick(e) {
-            e.preventDefault();
+            // e.preventDefault();
             let rect = renderer.domElement.getBoundingClientRect();
             mouse.x = ((e.clientX - rect.left) / (rect.width - rect.left)) * 2 - 1;
             mouse.y = -((e.clientY - rect.top) / (rect.bottom - rect.top)) * 2 + 1;
@@ -184,7 +184,7 @@ export default class Globe {
 
                 let lineGraphContainer = document.getElementById("line-graph");
                 lineGraphContainer.classList.remove("line-graph-hidden");
-                
+
                 let instructionsBox = document.getElementById("instructions");
                 instructionsBox.classList.add("instructions-box-hidden");                
             }
