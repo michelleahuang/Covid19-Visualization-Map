@@ -11,7 +11,26 @@ export default async function createChart(ctx, country, province) {
 
     let countryName = country;
     let provinceName = province;
-    let countryIndex = finalData.indexOf(countryName);
+    // let countryIndex = finalData.indexOf(countryName);
+    let index = -1;
+
+    for (let i = 0; i < finalData.length; i++) {
+        let countryArray = finalData[i][0];
+        let countryInfoArray = countryArray[countryArray.length - 1]
+        console.log(countryInfoArray[0]);
+        let provinceIndex = countryInfoArray.indexOf(provinceName);
+        if (provinceName !== "") {
+            console.log(provinceIndex)
+            index = provinceIndex;
+        } else {
+            let countryIndex = countryInfoArray.indexOf(countryName);
+            index = countryIndex;
+            console.log(countryIndex);
+        }
+        // let countryIndex = countryInfoArray.indexOf(countryName)
+        // console.log(countryIndex);
+    }
+
     // console.log(countryName);
     // console.log(provinceName);
     // console.log(countryIndex);

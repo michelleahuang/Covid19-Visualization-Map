@@ -67,4 +67,8 @@ canvas#chart {
     /* background-color: black; */
 }
 
+.line-graph-hidden {
+    display: none;
+}
+
 

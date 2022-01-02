@@ -5,5 +5,8 @@ export default function instructions() {
         e.preventDefault();
         let instructionsBox = document.getElementById("instructions");
         instructionsBox.classList.toggle("instructions-box-hidden")
+
+        let lineGraphContainer = document.getElementById("line-graph");
+        lineGraphContainer.classList.add("line-graph-hidden");    
     })
 }

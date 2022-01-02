@@ -171,14 +171,20 @@ export default class Globe {
 
             let intersects = raycaster.intersectObjects(clouds.children);
             for (let i = 0; i < intersects.length; i++) {
-                // console.log(intersects[0]);
+
                 // where I'm going to display the chart
-                console.log(intersects[0].object.userData.country)
-                console.log(intersects[0].object.userData.provinceState)
+                let country = intersects[0].object.userData.country;
+                let province = intersects[0].object.userData.provinceState;
 
-                // const ctx = document.getElementById("chart").getContext("2d");
-                // createChart(ctx, intersects[0].object.userData.country, intersects[0].object.userData.province);
+                console.log(country);
+                console.log(province);
 
+                const ctx = document.getElementById("chart").getContext("2d");
+                createChart(ctx, country, province);
+
+                let lineGraphContainer = document.getElementById("line-graph");
+                lineGraphContainer.classList.remove("line-graph-hidden");
+                
                 let instructionsBox = document.getElementById("instructions");
                 instructionsBox.classList.add("instructions-box-hidden");                
             }
