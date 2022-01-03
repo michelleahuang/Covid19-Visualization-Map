@@ -130,7 +130,7 @@ div#button-div {
 div#button-div button {
     width: 70px;
     padding: 10px 5px;
-    margin: 10px;
+    margin: 10px 15px;
 }
 
 canvas#chart {
