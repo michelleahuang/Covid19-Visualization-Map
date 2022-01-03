@@ -65,7 +65,7 @@ export default async function createChart(ctx, country, province) {
             x: {
                 title: {
                     display: true,
-                    text: 'Day',
+                    text: 'Day', DONT FORGET TO INCLUDE THE YEAR
                     color: 'white'
                 },
                 ticks: { color: 'white' }
