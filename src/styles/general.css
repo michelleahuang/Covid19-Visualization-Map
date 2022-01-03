@@ -71,4 +71,7 @@ canvas#chart {
     display: none;
 }
 
+.show-country-label {
+    display: block;
+}
 

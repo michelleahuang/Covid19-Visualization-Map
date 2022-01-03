@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { RectAreaLight } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { CSS2DObject, CSS2DRenderer } from 'three/examples/jsm/renderers/CSS2DRenderer';
 import getData from "./data.js";
 import createChart from "./chart.js"
 
@@ -149,6 +150,7 @@ export default class Globe {
                     countryDot.material.color = new THREE.Color(0xFFFF00);
                 }
                 countryDot.scale.set(1.0, 1.0);
+                document.body.style.cursor = "default";
             }
         }
 
@@ -156,10 +158,29 @@ export default class Globe {
             raycaster.setFromCamera(mouse, camera);
             let intersects = raycaster.intersectObjects(clouds.children);
             for (let i = 0; i < intersects.length; i++) {
-                intersects[0].object.material.color = new THREE.Color(0xFF0000);
-                intersects[0].object.scale.set(1.5, 1.5);
+                let hoveredCountry = intersects[0].object;
+                hoveredCountry.material.color = new THREE.Color(0xFF0000);
+                hoveredCountry.scale.set(1.5, 1.5);
+                document.body.style.cursor = "pointer";
+
+                // hoveredCountry.userData
+
             }
         }
+
+        //     let countryLabelDiv = document.createElement("div");
+        //     countryLabelDiv.classList.add("show-country-label");
+        //     if (intersects[0].object.userData.provinceState === "") {
+        //         countryLabelDiv.innerText = intersects[0].object.userData.country;
+        //     } else {
+        //         countryLabelDiv.innerText = intersects[0].object.userData.provinceState;
+        //     }
+        //     countryLabelDiv.style.marginTop = "-1px";
+        //     countryLabelDiv.style.color = "red";
+        //     let countryLabel = new CSS2DRenderer(countryLabelDiv);
+        //     // countryLabel.position.set(0, 1, 0);
+        //     globe.add(countryLabel);
+        // }
 
         // Display chart for clicked on country
         function onClick(e) {
@@ -206,8 +227,8 @@ export default class Globe {
             renderer.render( scene, camera );
             requestAnimationFrame( animate );
         }
-
         animate();
     }
+
 }
 
