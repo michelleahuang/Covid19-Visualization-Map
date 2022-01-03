@@ -135,13 +135,13 @@ export default class Globe {
         const mouse = new THREE.Vector2(); // holds our mouse coordinates
         const raycaster = new THREE.Raycaster();
 
-        function onMouseMove(e) {
-            let rect = renderer.domElement.getBoundingClientRect();
+        function onMouseMove(e) { // calculates mouse position to be between -1 and 1
+            let rect = renderer.domElement.getBoundingClientRect(); 
             mouse.x = ((e.clientX - rect.left) / (rect.width - rect.left)) * 2 - 1;
             mouse.y = -((e.clientY - rect.top) / (rect.bottom - rect.top)) * 2 + 1;
         }
 
-        window.addEventListener("mousemove", onMouseMove, false);
+        window.addEventListener("mousemove", onMouseMove, false); // makes sure our mouse coordinates are stored correctly
 
         function resetCountry() {
             for (let i = 0; i < clouds.children.length; i++) {
@@ -150,7 +150,8 @@ export default class Globe {
                     countryDot.material.color = new THREE.Color(0xFFFF00);
                 }
                 countryDot.scale.set(1.0, 1.0);
-                document.body.style.cursor = "default";
+                let globeDiv = document.getElementById("globe-canvas")
+                globeDiv.style.cursor = "default";
             }
         }
 
@@ -161,7 +162,8 @@ export default class Globe {
                 let hoveredCountry = intersects[0].object;
                 hoveredCountry.material.color = new THREE.Color(0xFF0000);
                 hoveredCountry.scale.set(1.5, 1.5);
-                document.body.style.cursor = "pointer";
+                let globeDiv = document.getElementById("globe-canvas")
+                globeDiv.style.cursor = "pointer";
 
                 // hoveredCountry.userData
 
