@@ -52,41 +52,6 @@ h1 {
     display: none;
 }
 
-#line-graph {
-    background-color: white;
-}
-
-div#line-graph {
-    border: 1px solid white;
-    margin: 5px;
-}
-
-div#chart-button-container {
-    display:flex;
-}
-
-div#button-div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-image: url("../src/images/galaxy-jpg.jpg");
-}
-
-div#button-div button {
-    width: 70px;
-    padding: 10px 5px;
-    margin: 10px 15px;
-}
-
-canvas#chart {
-    background-image: url("../src/images/galaxy-jpg.jpg");
-    padding: 5px;
-}
-
-.line-graph-hidden {
-    display: none;
-}
-
 /* If the country tooltip label ends up working. Otherwise, can get rid of it */
 /* .show-country-label {
     display: block;
