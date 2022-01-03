@@ -165,24 +165,9 @@ export default class Globe {
                 let globeDiv = document.getElementById("globe-canvas")
                 globeDiv.style.cursor = "pointer";
 
-                // hoveredCountry.userData
-
             }
         }
 
-        //     let countryLabelDiv = document.createElement("div");
-        //     countryLabelDiv.classList.add("show-country-label");
-        //     if (intersects[0].object.userData.provinceState === "") {
-        //         countryLabelDiv.innerText = intersects[0].object.userData.country;
-        //     } else {
-        //         countryLabelDiv.innerText = intersects[0].object.userData.provinceState;
-        //     }
-        //     countryLabelDiv.style.marginTop = "-1px";
-        //     countryLabelDiv.style.color = "red";
-        //     let countryLabel = new CSS2DRenderer(countryLabelDiv);
-        //     // countryLabel.position.set(0, 1, 0);
-        //     globe.add(countryLabel);
-        // }
 
         // Display chart for clicked on country
         function onClick(e) {

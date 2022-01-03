@@ -20,7 +20,7 @@ h1 {
     border: 1px solid white;
     color: white;
     width: 570px;
-    height: 250px;
+    height: auto;
     text-align: center;
     margin: auto;
     background-color: blue;
@@ -52,8 +52,5 @@ h1 {
     display: none;
 }
 
-/* If the country tooltip label ends up working. Otherwise, can get rid of it */
-/* .show-country-label {
-    display: block;
-} */
+
 
