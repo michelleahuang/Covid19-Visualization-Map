@@ -3,7 +3,6 @@ import getData from "./data.js";
 
 export default async function createChart(ctx, country, province) {
     const finalData = await getData();
-
     const days = finalData[0][2];
     const twentyTwenty = days[0].slice(0, 345)
     const twentyTwentyOne = days[0].slice(345);
@@ -15,25 +14,30 @@ export default async function createChart(ctx, country, province) {
     // let countryIndex = finalData.indexOf(countryName);
     let index = -1;
 
-    // console.log(finalData);
-
     for (let i = 0; i < finalData.length; i++) {
         let countryArray = finalData[i][0];
-
         let countryInfoArray = countryArray[countryArray.length - 1]
-        // console.log(countryInfoArray[0]);
         let provinceIndex = countryInfoArray.indexOf(provinceName);
         if (provinceName !== "") {
-            console.log(provinceIndex)
-            index = provinceIndex;
+            if (provinceIndex === 0) {
+                index = i + 1;
+            }
+            // console.log(provinceIndex)
+            // index = provinceIndex;
         } else {
             let countryIndex = countryInfoArray.indexOf(countryName);
-            index = countryIndex;
-            console.log(countryIndex);
+            if (countryIndex === 1) {
+                index = i + 1;
+            }
+            // index = countryIndex;
+            // console.log(countryIndex);
         }
         // let countryIndex = countryInfoArray.indexOf(countryName)
         // console.log(countryIndex);
     }
+
+    console.log(index);
+
 
     // console.log(countryName);
     // console.log(provinceName);

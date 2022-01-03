@@ -20,16 +20,23 @@ export default async function getData() {
     return finalData;
 }
 
+getData().catch(error => {
+    console.error(error);
+})
+
+
 // export default function getData() {
 //     const finalData = []; 
 
 //     fetch("src/data/time_series_covid19_confirmed_global.csv")
 //     .then(response => {
+//         if (!response.ok) {
+//             throw new Error('Net resopnse was not ok')
+//         }
 //         return response.text();
 //     })
 //     .then(text => {
 //         const table = text.split('\n'); // splitting data into rows by line break
-//         // const finalData = []; 
 
 //         table.forEach(row => { // each row is a country in the table
 //             const columns = row.split(",");
@@ -42,17 +49,19 @@ export default async function getData() {
 //             let countryData = []; 
 //             countryData.push(country, location, cases); // each index is a single country
 //             finalData.push(countryData);
-
 //         })
 //         // console.log(finalData);
-//         return finalData;
+//         // return finalData;
 //         // console.log(finalData); // need to figure out how to get this out of the promise - 281 countries
 //         // console.log(finalData[0].slice(2)[0]) // gives me an array of dates
 //     //     // console.log(finalData[1]) // first country - afghanistan 
 //     //     // console.log(finalData[0]) // gives you the headers, ie. the dates and labels
 //         // return finalData;
-
+//         return finalData;
 //     })
+//     .catch(error => {
+//         console.error(error);
+//     });
 //     // console.log(finalData);
 //     // return finalData;
     
