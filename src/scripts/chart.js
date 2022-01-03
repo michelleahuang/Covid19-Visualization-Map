@@ -11,7 +11,6 @@ export default async function createChart(ctx, country, province) {
 
     let countryName = country;
     let provinceName = province;
-    // let countryIndex = finalData.indexOf(countryName);
     let index = -1;
 
     for (let i = 0; i < finalData.length; i++) {
@@ -22,40 +21,36 @@ export default async function createChart(ctx, country, province) {
             if (provinceIndex === 0) {
                 index = i + 1;
             }
-            // console.log(provinceIndex)
-            // index = provinceIndex;
         } else {
             let countryIndex = countryInfoArray.indexOf(countryName);
             if (countryIndex === 1) {
                 index = i + 1;
             }
-            // index = countryIndex;
-            // console.log(countryIndex);
         }
-        // let countryIndex = countryInfoArray.indexOf(countryName)
-        // console.log(countryIndex);
     }
 
     console.log(index);
 
+    let chartName = "";
+    if (provinceName === "") {
+        chartName = countryName;
+    } else {
+        chartName = provinceName;
+    }
 
-    // console.log(countryName);
-    // console.log(provinceName);
-    // console.log(countryIndex);
+    const covidData = finalData[index][2]; // COVID data for clicked on country
+    const countryCovid2020 = covidData[0].slice(0, 345); // 2020 cases data
+    const countryCovid2021 = covidData[0].slice(345); // 2021 cases data
 
-    // const covidData = finalData[1][2]; // Only gives me the first country (Afghanistan)
-    // console.log(covidData);
-    // const countryCovid2020 = covidData[0].slice(0, 345); // gives me Afghanistan's 2020 cases data
-    // const countryCovid2021 = covidData[0].slice(345); // gives me Afghanistan's 2021 cases data
-    // const yAxis = country2020
+    const yAxis = countryCovid2020
 
-    /*
+    
     const myChart = new Chart(ctx, {
     type: 'line',
     data: {
         labels: xAxis,
         datasets: [{
-            label: "COVID-19 Cases per Day in [Name of Country]",
+            label: "COVID-19 Cases per Day in " + chartName,
             data: yAxis,
             fill: false,
             backgroundColor: 'rgba(8, 175, 238, 0.2)',
@@ -69,7 +64,7 @@ export default async function createChart(ctx, country, province) {
             x: {
                 title: {
                     display: true,
-                    text: 'Day', DONT FORGET TO INCLUDE THE YEAR
+                    text: 'Day', //DONT FORGET TO INCLUDE THE YEAR
                     color: 'white'
                 },
                 ticks: { color: 'white' }
@@ -90,12 +85,10 @@ export default async function createChart(ctx, country, province) {
             legend: {
                 labels: { color: 'white' }
             }
-
-        }
+        },
+        responsive: false
     }
     });
-
-    */
 
 }
 
