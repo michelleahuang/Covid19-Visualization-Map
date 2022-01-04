@@ -3,7 +3,7 @@ import { RectAreaLight } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { CSS2DObject, CSS2DRenderer } from 'three/examples/jsm/renderers/CSS2DRenderer';
 import getData from "./data.js";
-import createChart from "./chart.js"
+import { createChart, clearChart} from "./chart.js"
 
 const CONSTANTS = {
     WIDTH: 640,
@@ -183,12 +183,9 @@ export default class Globe {
                 let province = intersects[0].object.userData.provinceState;
 
                 const ctx = document.getElementById("chart").getContext("2d");
-
+            
                 createChart(ctx, country, province);
-                const chartStatus = Chart.getChart("chart");
-                    if (chartStatus !== undefined) {
-                        chartStatus.destroy();
-                    }
+                clearChart();
 
                 let lineGraphContainer = document.getElementById("line-graph");
                 lineGraphContainer.classList.remove("line-graph-hidden");

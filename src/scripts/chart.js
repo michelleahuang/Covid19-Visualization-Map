@@ -5,7 +5,7 @@ import { chartButtons2020, chartButtons2021 } from "./utils.js";
 import Globe from "./globe.js"
 
 
-export default async function createChart(ctx, country, province) {
+export async function createChart(ctx, country, province) {
 
     const finalData = await getData();
     const days = finalData[0][2];
@@ -99,10 +99,9 @@ export default async function createChart(ctx, country, province) {
     chartButtons2020(myChart, twentyTwenty, countryCovid2020);
     chartButtons2021(myChart, twentyTwentyOne, countryCovid2021);
 
-    // window.addEventListener("click", Globe.onClick, false) // need to do myChart.destroy
 }
 
-function clearChart() {
+export function clearChart() {
     const chartStatus = Chart.getChart("chart");
     if (chartStatus !== undefined) {
             chartStatus.destroy();
