@@ -15,6 +15,7 @@ export function chartButtons2020(myChart, twentyTwenty, countryCovid2020) {
     let chartButton2020 = document.getElementById("2020");
     chartButton2020.classList.remove("chart-button-selected")
 
+    // console.log(myChart);
     chartButton2020.addEventListener("click", (e) => {
         if (chartButton2020.value === "2020") {
             myChart.config.data.labels = twentyTwenty;
@@ -34,6 +35,7 @@ export function chartButtons2021(myChart, twentyTwentyOne, countryCovid2021) {
     let chartButton2021 = document.getElementById("2021")
     chartButton2021.classList.remove("chart-button-selected")
 
+    // console.log(myChart);
     chartButton2021.addEventListener("click", (e) => {
         if (chartButton2021.value === "2021") {
             myChart.config.data.labels = twentyTwentyOne;
