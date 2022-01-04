@@ -99,7 +99,13 @@ export default async function createChart(ctx, country, province) {
     chartButtons2020(myChart, twentyTwenty, countryCovid2020);
     chartButtons2021(myChart, twentyTwentyOne, countryCovid2021);
 
-
     // window.addEventListener("click", Globe.onClick, false) // need to do myChart.destroy
+}
+
+function clearChart() {
+    const chartStatus = Chart.getChart("chart");
+    if (chartStatus !== undefined) {
+            chartStatus.destroy();
+    }
 }
 

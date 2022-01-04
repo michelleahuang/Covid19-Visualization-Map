@@ -185,6 +185,10 @@ export default class Globe {
                 const ctx = document.getElementById("chart").getContext("2d");
 
                 createChart(ctx, country, province);
+                const chartStatus = Chart.getChart("chart");
+                    if (chartStatus !== undefined) {
+                        chartStatus.destroy();
+                    }
 
                 let lineGraphContainer = document.getElementById("line-graph");
                 lineGraphContainer.classList.remove("line-graph-hidden");
