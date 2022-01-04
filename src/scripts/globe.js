@@ -137,9 +137,10 @@ export default class Globe {
 
         function onMouseMove(e) { // calculates mouse position to be between -1 and 1
             let domRect = renderer.domElement.getBoundingClientRect(); 
-            mouse.x = ((e.clientX - domRect.left) / (domRect.width - domRect.left)) * 2 - 1;
+            mouse.x = ((e.clientX - domRect.left) / (domRect.right - domRect.left)) * 2 - 1;
             mouse.y = -((e.clientY - domRect.top) / (domRect.bottom - domRect.top)) * 2 + 1;
         }
+        
 
         window.addEventListener("mousemove", onMouseMove, false); // makes sure our mouse coordinates are stored correctly
 
@@ -168,11 +169,10 @@ export default class Globe {
             }
         }
 
-
         // Display chart for clicked on country
         function onClick(e) {
             let domRect = renderer.domElement.getBoundingClientRect();
-            mouse.x = ((e.clientX - domRect.left) / (domRect.width - domRect.left)) * 2 - 1;
+            mouse.x = ((e.clientX - domRect.left) / (domRect.right - domRect.left)) * 2 - 1;
             mouse.y = -((e.clientY - domRect.top) / (domRect.bottom - domRect.top)) * 2 + 1;
             raycaster.setFromCamera(mouse, camera);
 
@@ -183,13 +183,15 @@ export default class Globe {
                 let province = intersects[0].object.userData.provinceState;
 
                 const ctx = document.getElementById("chart").getContext("2d");
+
                 createChart(ctx, country, province);
 
                 let lineGraphContainer = document.getElementById("line-graph");
                 lineGraphContainer.classList.remove("line-graph-hidden");
 
                 let instructionsBox = document.getElementById("instructions");
-                instructionsBox.classList.add("instructions-box-hidden");                
+                instructionsBox.classList.add("instructions-box-hidden");     
+                
             }
         }
 
@@ -202,6 +204,7 @@ export default class Globe {
             addCountries()
         });
 
+
         function animate() {
             controls.update();
             globe.rotation.y += 0.0005;
@@ -210,6 +213,7 @@ export default class Globe {
             renderer.render( scene, camera );
             requestAnimationFrame( animate );
         }
+
         animate();
     }
 

@@ -6,6 +6,7 @@ import Globe from "./globe.js"
 
 
 export default async function createChart(ctx, country, province) {
+
     const finalData = await getData();
     const days = finalData[0][2];
     const twentyTwenty = days[0].slice(0, 345)
@@ -47,9 +48,8 @@ export default async function createChart(ctx, country, province) {
     const yAxis = countryCovid2020
 
     console.log(index);
-    console.log(countryCovid2020);
-    console.log(countryCovid2021);
-
+    // console.log(countryCovid2020);
+    // console.log(countryCovid2021);
     
     const myChart = new Chart(ctx, {
         type: 'line',
@@ -99,5 +99,7 @@ export default async function createChart(ctx, country, province) {
     chartButtons2020(myChart, twentyTwenty, countryCovid2020);
     chartButtons2021(myChart, twentyTwentyOne, countryCovid2021);
 
+
+    // window.addEventListener("click", Globe.onClick, false) // need to do myChart.destroy
 }
 

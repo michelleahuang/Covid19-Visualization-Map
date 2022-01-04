@@ -211,7 +211,7 @@ canvas#chart {
 }
 
 .chart-button-selected {
-    background-color: blue;
+    background-color: #659BDF;
 }
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!

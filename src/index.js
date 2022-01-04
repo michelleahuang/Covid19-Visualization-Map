@@ -1,11 +1,9 @@
 import Globe from "./scripts/globe.js";
-import { instructions, chartButtons } from "./scripts/utils.js";
+import { instructions } from "./scripts/utils.js";
 
 const canvas = document.getElementById("globe-canvas")
 
 new Globe(canvas);
-
 instructions();
-// chartButtons();
-// createChart(ctx);
+
 

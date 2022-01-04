@@ -23,6 +23,8 @@ export function chartButtons2020(myChart, twentyTwenty, countryCovid2020) {
         myChart.update();
         chartButton2020.classList.add("chart-button-selected")
 
+        let chartButton2021 = document.getElementById("2021");
+        chartButton2021.classList.remove("chart-button-selected");
     })
 
 }
@@ -38,6 +40,9 @@ export function chartButtons2021(myChart, twentyTwentyOne, countryCovid2021) {
         }
         myChart.update();
         chartButton2021.classList.add("chart-button-selected")
+
+        let chartButton2020 = document.getElementById("2020");
+        chartButton2020.classList.remove("chart-button-selected");
     })
 
 }
