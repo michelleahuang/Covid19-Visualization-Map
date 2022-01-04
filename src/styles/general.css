@@ -52,5 +52,8 @@ h1 {
     display: none;
 }
 
-
+button:hover {
+    cursor: pointer;
+    background-color: #659BDF;
+}
 

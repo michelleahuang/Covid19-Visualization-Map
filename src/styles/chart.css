@@ -34,5 +34,6 @@ canvas#chart {
 }
 
 .chart-button-selected {
-    background-color: #659BDF;
+    border-width: 6px;
+    border-color: #659BDF;
 }
