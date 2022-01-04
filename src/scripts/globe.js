@@ -179,12 +179,8 @@ export default class Globe {
             let intersects = raycaster.intersectObjects(clouds.children);
             for (let i = 0; i < intersects.length; i++) {
 
-                // where I'm going to display the chart
                 let country = intersects[0].object.userData.country;
                 let province = intersects[0].object.userData.provinceState;
-
-                // console.log(country);
-                // console.log(province);
 
                 const ctx = document.getElementById("chart").getContext("2d");
                 createChart(ctx, country, province);
