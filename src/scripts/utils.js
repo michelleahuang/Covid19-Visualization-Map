@@ -11,13 +11,13 @@ export function instructions() {
     })
 }
 
-export function chartButtons2020(myChart, twentyTwenty, countryCovid2020, chartButtons2021) {
+export function chartButtons2020(myChart, twentyTwenty, countryCovid2020) {
     let chartButton2020 = document.getElementById("2020");
 
     chartButton2020.addEventListener("click", (e) => {
         if (chartButton2020.value === "2020") {
             myChart.config.data.labels = twentyTwenty;
-            myChart.config.data.datasets.data = countryCovid2020;
+            myChart.config.data.datasets[0].data = countryCovid2020;
             myChart.config.options.scales.x.title.text = "Days in " + chartButton2020.value;
         }
         myChart.update();
@@ -27,13 +27,13 @@ export function chartButtons2020(myChart, twentyTwenty, countryCovid2020, chartB
 
 }
 
-export function chartButtons2021(myChart, twentyTwentyOne, countryCovid2021, chartButtons2020) {
+export function chartButtons2021(myChart, twentyTwentyOne, countryCovid2021) {
     let chartButton2021 = document.getElementById("2021")
 
     chartButton2021.addEventListener("click", (e) => {
         if (chartButton2021.value === "2021") {
             myChart.config.data.labels = twentyTwentyOne;
-            myChart.config.data.datasets.data = countryCovid2021;            
+            myChart.config.data.datasets[0].data = countryCovid2021;         
             myChart.config.options.scales.x.title.text = "Days in " + chartButton2021.value;
         }
         myChart.update();

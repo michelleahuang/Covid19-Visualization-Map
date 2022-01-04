@@ -48,6 +48,8 @@ export default async function createChart(ctx, country, province) {
 
     console.log(index);
     console.log(countryCovid2020);
+    console.log(countryCovid2021);
+
     
     const myChart = new Chart(ctx, {
         type: 'line',
