@@ -143,6 +143,13 @@ a {
     top: 100%;
     left: 40%;
 }  */
+
+@media screen and (max-width: 900px) {
+    #main-body {
+        display: flex;
+        flex-direction: column;
+    }
+}
 /*!*********************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/header_nav.css ***!
   \*********************************************************************************************************/

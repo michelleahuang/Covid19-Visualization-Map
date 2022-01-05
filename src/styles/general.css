@@ -88,3 +88,10 @@ a {
     top: 100%;
     left: 40%;
 }  */
+
+@media screen and (max-width: 900px) {
+    #main-body {
+        display: flex;
+        flex-direction: column;
+    }
+}
