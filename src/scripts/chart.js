@@ -100,7 +100,6 @@ export async function createChart(ctx, country, province) {
 
     chartButtons2020(myChart, twentyTwenty, countryCovid2020);
     chartButtons2021(myChart, twentyTwentyOne, countryCovid2021);
-
 }
 
 function clearChart() {

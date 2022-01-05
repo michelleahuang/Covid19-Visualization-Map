@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import { RectAreaLight } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { CSS2DObject, CSS2DRenderer } from 'three/examples/jsm/renderers/CSS2DRenderer';
 import getData from "./data.js";
@@ -164,6 +163,8 @@ export default class Globe {
                 hoveredCountry.scale.set(1.5, 1.5);
                 let globeDiv = document.getElementById("globe-canvas")
                 globeDiv.style.cursor = "pointer";
+                
+                // findCountryNames(hoveredCountry);
             }
         }
 
