@@ -61,3 +61,15 @@ a {
     cursor: pointer;
 }
 
+
+#tooltip {
+    position: absolute;
+    text-align: center;
+    padding: 5px 10px;
+    background-color: blue;
+    color: white;
+    font-size: 13px;
+    opacity: 0;
+    border: 1px solid white;
+    border-radius: 3px;
+}

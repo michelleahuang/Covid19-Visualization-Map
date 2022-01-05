@@ -134,14 +134,6 @@ export default class Globe {
         const mouse = new THREE.Vector2(); // holds our mouse coordinates
         const raycaster = new THREE.Raycaster();
 
-        function onMouseMove(e) { // calculates mouse position to be between -1 and 1
-            let domRect = renderer.domElement.getBoundingClientRect(); 
-            mouse.x = ((e.clientX - domRect.left) / (domRect.right - domRect.left)) * 2 - 1;
-            mouse.y = -((e.clientY - domRect.top) / (domRect.bottom - domRect.top)) * 2 + 1;
-        }
-        
-        window.addEventListener("mousemove", onMouseMove, false); // makes sure our mouse coordinates are stored correctly
-
         function resetCountry() {
             for (let i = 0; i < clouds.children.length; i++) {
                 let countryDot = clouds.children[i];
@@ -149,6 +141,7 @@ export default class Globe {
                     countryDot.material.color = new THREE.Color(0xFFFF00);
                 }
                 countryDot.scale.set(1.0, 1.0);
+
                 let globeDiv = document.getElementById("globe-canvas")
                 globeDiv.style.cursor = "default";
             }
@@ -161,12 +154,76 @@ export default class Globe {
                 let hoveredCountry = intersects[0].object;
                 hoveredCountry.material.color = new THREE.Color(0xFF0000);
                 hoveredCountry.scale.set(1.5, 1.5);
+
                 let globeDiv = document.getElementById("globe-canvas")
                 globeDiv.style.cursor = "pointer";
+
                 
-                // findCountryNames(hoveredCountry);
+                // if (hoveredCountry.userData.country === ) {
+
+                // }
+
+                updatedMousePosition = intersects[0].point;
+                
+                // // if (!updatedMousePosition) {
+                // //     hideTooltip();
+                // // }
+
+                if (updatedMousePosition) {
+                    showTooltip(hoveredCountry);
+                }
             }
         }
+
+        let updatedMousePosition = undefined; // most updated projection of the mouse on the country dot (the intersection with raycaster)
+
+        function showTooltip(hoveredCountry) {
+            let tooltipDiv = document.getElementById("tooltip");
+        
+            if (tooltipDiv && updatedMousePosition) {
+                tooltipDiv.style.display = "block"
+            }
+        
+            let halfCanvasWidth = renderer.domElement.offsetWidth / 2;
+            let halfCanvasHeight = renderer.domElement.offsetHeight / 2;
+        
+            let tooltipPosition = updatedMousePosition.clone().project(camera);
+                
+            tooltipPosition.x = (tooltipPosition.x * halfCanvasWidth) + halfCanvasWidth + renderer.domElement.offsetLeft;
+            tooltipPosition.y = - (tooltipPosition.y * halfCanvasHeight) + halfCanvasHeight + renderer.domElement.offsetTop;
+    
+            let tootipWidth = tooltipDiv.offsetWidth;
+            let tootipHeight = tooltipDiv.offsetHeight;
+    
+            tooltipDiv.style.left = (tooltipPosition.x - (tootipWidth / 2)) + "px";
+            tooltipDiv.style.top = (tooltipPosition.y - tootipHeight - 5)+ "px";
+
+            if (hoveredCountry.userData.provinceState == "") {
+                tooltipDiv.innerText = hoveredCountry.userData.country;
+            } else {
+                tooltipDiv.innerText = hoveredCountry.userData.provinceState + ", " + hoveredCountry.userData.country;
+            }
+
+            tooltipDiv.style.opacity = "1.0"
+        }
+
+        function hideTooltip() {
+            let tooltipDiv = document.getElementById("tooltip");
+            if (tooltipDiv) {
+                tooltipDiv.style.display = "none"
+            }
+        }
+
+
+
+        function onMouseMove(e) { // calculates mouse position to be between -1 and 1
+            let domRect = renderer.domElement.getBoundingClientRect(); 
+            mouse.x = ((e.clientX - domRect.left) / (domRect.right - domRect.left)) * 2 - 1;
+            mouse.y = -((e.clientY - domRect.top) / (domRect.bottom - domRect.top)) * 2 + 1;
+        }
+        
+        window.addEventListener("mousemove", onMouseMove, false);
+
 
         // Display chart for clicked on country
         function onClick(e) {
