@@ -193,7 +193,8 @@ export default class Globe {
             let tootipHeight = tooltipDiv.offsetHeight;
     
             tooltipDiv.style.left = (tooltipPosition.x - (tootipWidth / 2)) + "px";
-            tooltipDiv.style.top = (tooltipPosition.y - tootipHeight - 5)+ "px";
+            tooltipDiv.style.top = (tooltipPosition.y - tootipHeight - 12)+ "px";
+
 
             if (hoveredCountry.userData.provinceState == "") {
                 tooltipDiv.innerText = hoveredCountry.userData.country;

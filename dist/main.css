@@ -128,6 +128,22 @@ a {
     border: 1px solid white;
     border-radius: 3px;
 }
+
+#tooltip::after {
+    position: absolute;
+    display: block;
+    width: 0px;
+    height: 0px;
+
+    border-top: 5px solid blue;
+    border-bottom: 0;   /* delete the opposite border */ 
+    border-right: 5px solid transparent;  /* set adjacent triangles to transparent */ 
+    border-left: 5px solid transparent;  
+    content: " ";
+    top: 100%;
+    left: 40%;
+}
+
 /*!*********************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/header_nav.css ***!
   \*********************************************************************************************************/
