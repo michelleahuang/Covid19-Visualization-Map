@@ -20,7 +20,9 @@ export function chartButtons2020(myChart, twentyTwenty, countryCovid2020) {
         chartButton2020.removeEventListener("click", create2020Chart);
     }
 
-    chartButton2020.addEventListener("click", create2020Chart);
+    if (chartButton2020) {
+        chartButton2020.addEventListener("click", create2020Chart);
+    }
     
     function create2020Chart (e) {
         eventListenerFlag = true;
@@ -46,7 +48,9 @@ export function chartButtons2021(myChart, twentyTwentyOne, countryCovid2021) {
         chartButton2021.removeEventListener("click", create2021Chart);
     }
 
-    chartButton2021.addEventListener("click", create2021Chart);
+    if (chartButton2021) {
+        chartButton2021.addEventListener("click", create2021Chart);
+    }
     
     function create2021Chart (e) {
         eventListenerFlag = true;

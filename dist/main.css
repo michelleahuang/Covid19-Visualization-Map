@@ -129,21 +129,20 @@ a {
     border-radius: 3px;
 }
 
-#tooltip::after {
+/* #tooltip::after {
     position: absolute;
     display: block;
     width: 0px;
     height: 0px;
 
     border-top: 5px solid white;
-    border-bottom: 0;   /* delete the opposite border */ 
-    border-right: 5px solid transparent;  /* set adjacent triangles to transparent */ 
+    border-bottom: 0;   /* delete the opposite border 
+    border-right: 5px solid transparent;  /* set adjacent triangles to transparent 
     border-left: 5px solid transparent;  
     content: " ";
     top: 100%;
     left: 40%;
-}
-
+}  */
 /*!*********************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/header_nav.css ***!
   \*********************************************************************************************************/
@@ -248,6 +247,8 @@ canvas#chart {
     border-width: 6px;
     border-color: #659BDF;
 }
+
+
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
