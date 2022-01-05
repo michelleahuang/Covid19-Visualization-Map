@@ -192,7 +192,7 @@ export default class Globe {
             let tootipWidth = tooltipDiv.offsetWidth;
             let tootipHeight = tooltipDiv.offsetHeight;
     
-            tooltipDiv.style.left = (tooltipPosition.x - (tootipWidth / 2)) + "px";
+            tooltipDiv.style.left = (tooltipPosition.x - (tootipWidth / 2) + 3) + "px";
             tooltipDiv.style.top = (tooltipPosition.y - tootipHeight - 12)+ "px";
 
 
