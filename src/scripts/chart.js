@@ -48,8 +48,6 @@ export async function createChart(ctx, country, province) {
     const yAxis = countryCovid2020
 
     console.log(index);
-    // console.log(countryCovid2020);
-    // console.log(countryCovid2021);
 
     clearChart();
 
