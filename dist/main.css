@@ -69,6 +69,7 @@ h1 {
 #main-body {
     display: flex;
     align-items: center;
+    margin-right: 5vh;
 }
 
 #instructions {
