@@ -144,6 +144,12 @@ export default class Globe {
 
                 let globeDiv = document.getElementById("globe-canvas")
                 globeDiv.style.cursor = "default";
+
+                updatedMousePosition = clouds.children[0].point;
+                
+                if (!updatedMousePosition) {
+                    hideTooltip();
+                }
             }
         }
 
@@ -158,23 +164,14 @@ export default class Globe {
                 let globeDiv = document.getElementById("globe-canvas")
                 globeDiv.style.cursor = "pointer";
 
-                
-                // if (hoveredCountry.userData.country === ) {
-
-                // }
-
                 updatedMousePosition = intersects[0].point;
-                
-                // // if (!updatedMousePosition) {
-                // //     hideTooltip();
-                // // }
-
                 if (updatedMousePosition) {
                     showTooltip(hoveredCountry);
                 }
             }
         }
 
+        // Rendering Tooltip Label
         let updatedMousePosition = undefined; // most updated projection of the mouse on the country dot (the intersection with raycaster)
 
         function showTooltip(hoveredCountry) {
@@ -210,11 +207,10 @@ export default class Globe {
         function hideTooltip() {
             let tooltipDiv = document.getElementById("tooltip");
             if (tooltipDiv) {
-                tooltipDiv.style.display = "none"
+                tooltipDiv.style.display = "none";
+                tooltipDiv.style.opacity = "0.0";
             }
         }
-
-
 
         function onMouseMove(e) { // calculates mouse position to be between -1 and 1
             let domRect = renderer.domElement.getBoundingClientRect(); 
@@ -223,7 +219,6 @@ export default class Globe {
         }
         
         window.addEventListener("mousemove", onMouseMove, false);
-
 
         // Display chart for clicked on country
         function onClick(e) {
@@ -259,7 +254,6 @@ export default class Globe {
             e.preventDefault()
             addCountries()
         });
-
 
         function animate() {
             controls.update();
