@@ -50,7 +50,9 @@ export async function createChart(ctx, country, province) {
     console.log(index);
     // console.log(countryCovid2020);
     // console.log(countryCovid2021);
-    
+
+    clearChart();
+
     const myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -101,10 +103,12 @@ export async function createChart(ctx, country, province) {
 
 }
 
-export function clearChart() {
+function clearChart() {
     const chartStatus = Chart.getChart("chart");
     if (chartStatus !== undefined) {
             chartStatus.destroy();
     }
 }
+
+
 

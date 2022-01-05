@@ -3,7 +3,7 @@ import { RectAreaLight } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { CSS2DObject, CSS2DRenderer } from 'three/examples/jsm/renderers/CSS2DRenderer';
 import getData from "./data.js";
-import { createChart, clearChart} from "./chart.js"
+import { createChart } from "./chart.js"
 
 const CONSTANTS = {
     WIDTH: 640,
@@ -141,7 +141,6 @@ export default class Globe {
             mouse.y = -((e.clientY - domRect.top) / (domRect.bottom - domRect.top)) * 2 + 1;
         }
         
-
         window.addEventListener("mousemove", onMouseMove, false); // makes sure our mouse coordinates are stored correctly
 
         function resetCountry() {
@@ -165,7 +164,6 @@ export default class Globe {
                 hoveredCountry.scale.set(1.5, 1.5);
                 let globeDiv = document.getElementById("globe-canvas")
                 globeDiv.style.cursor = "pointer";
-
             }
         }
 
@@ -185,7 +183,6 @@ export default class Globe {
                 const ctx = document.getElementById("chart").getContext("2d");
             
                 createChart(ctx, country, province);
-                clearChart();
 
                 let lineGraphContainer = document.getElementById("line-graph");
                 lineGraphContainer.classList.remove("line-graph-hidden");
