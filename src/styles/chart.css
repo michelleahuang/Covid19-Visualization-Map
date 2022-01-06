@@ -1,32 +1,45 @@
 #line-graph {
-    background-color: white;
+    background-color: transparent; 
+    width: 50%;
+    height: 100%;
+    padding-top: 15px;
 }
 
 div#line-graph {
     border: 1px solid white;
     margin: 5px;
+    min-width: 400px;
+    min-height: 400px;
 }
 
 div#chart-button-container {
     display:flex;
+    width: 90%;
+    height: 100%;
+    margin-right: 10px;
 }
 
 div#button-div {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: url("../src/images/galaxy-jpg.jpg");
+    /* background-image: url("../src/images/galaxy-jpg.jpg"); */
+    width: 100%;
+    margin-right: 15px;
 }
 
 div#button-div button {
     width: 70px;
     padding: 10px 5px;
-    margin: 10px 15px;
+    margin-top: 10px;
+    margin-right: 20px;
 }
 
 canvas#chart {
     background-image: url("../src/images/galaxy-jpg.jpg");
-    padding: 5px;
+    padding: 15px;
+    width: 100%;
+    height: 100%;
 }
 
 .line-graph-hidden {
@@ -38,12 +51,3 @@ canvas#chart {
     border-color: #659BDF;
 }
 
-/* @media screen and (max-width: 1313px) {
-    #line-graph {
-        display: flex;
-        flex-direction: column;
-    }
-} */
-
-/* @media screen and (min-width:) {
-} */

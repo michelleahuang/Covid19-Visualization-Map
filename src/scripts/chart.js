@@ -92,7 +92,8 @@ export async function createChart(ctx, country, province) {
                     labels: { color: 'white' }
                 }
             },
-            responsive: false
+            responsive: true,
+            maintainAspectRatio: false,
         }
     });
 
