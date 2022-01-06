@@ -15,11 +15,12 @@ a {
     color: white;
 }
 
+
 #data-source {
     color: white;
-    bottom: 0px;
-    /* padding: 10px; */
+    font-size: 17px;
     margin-left: 10px;
+    bottom: 0;
 }
 
 #personal-links ul {
