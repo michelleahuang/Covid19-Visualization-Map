@@ -1,7 +1,6 @@
 import { _ } from "core-js";
 import getData from "./data.js";
 import { chartButtons2020, chartButtons2021 } from "./utils.js";
-
 import Globe from "./globe.js"
 
 

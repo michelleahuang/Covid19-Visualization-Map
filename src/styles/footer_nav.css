@@ -16,7 +16,6 @@ a {
     color: white;
 }
 
-
 #data-source {
     color: white;
     font-size: 18px;
@@ -31,14 +30,29 @@ a {
 
 #github {
     margin-right: 10px;
+    transition: transform .2s;
+}
+
+#github:hover {
+    transform: scale(1.2);
 }
 
 #linkedin {
     margin-left: 10px;
     margin-right: 10px;
+    transition: transform .2s;
+}
+
+#linkedin:hover {
+    transform: scale(1.2);
 }
 
 #angelist {
     margin-left: 10px;
     margin-right: 10px;
+    transition: transform .2s;
+}
+
+#angelist:hover {
+    transform: scale(1.2);
 }

@@ -25,7 +25,6 @@ h1 {
 #instructions {
     border: 1px solid white;
     color: white;
-    /* width: 570px; */
     height: auto;
     text-align: center;
     margin: auto;
@@ -61,6 +60,7 @@ h1 {
 button:hover {
     cursor: pointer;
     background-color: #659BDF;
+    transform: scale(1.1);
 }
 
 a {

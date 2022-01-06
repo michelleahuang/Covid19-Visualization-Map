@@ -3,6 +3,7 @@ button {
     font-weight: 300;
     font-size: 16px;
     border-radius: 8px;
+    transition: transform .2s;
 }
 
 #header-nav {

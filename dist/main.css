@@ -80,7 +80,6 @@ h1 {
 #instructions {
     border: 1px solid white;
     color: white;
-    /* width: 570px; */
     height: auto;
     text-align: center;
     margin: auto;
@@ -116,6 +115,7 @@ h1 {
 button:hover {
     cursor: pointer;
     background-color: #659BDF;
+    transform: scale(1.1);
 }
 
 a {
@@ -165,6 +165,7 @@ button {
     font-weight: 300;
     font-size: 16px;
     border-radius: 8px;
+    transition: transform .2s;
 }
 
 #header-nav {
@@ -208,7 +209,6 @@ a {
     color: white;
 }
 
-
 #data-source {
     color: white;
     font-size: 18px;
@@ -223,16 +223,31 @@ a {
 
 #github {
     margin-right: 10px;
+    transition: transform .2s;
+}
+
+#github:hover {
+    transform: scale(1.2);
 }
 
 #linkedin {
     margin-left: 10px;
     margin-right: 10px;
+    transition: transform .2s;
+}
+
+#linkedin:hover {
+    transform: scale(1.2);
 }
 
 #angelist {
     margin-left: 10px;
     margin-right: 10px;
+    transition: transform .2s;
+}
+
+#angelist:hover {
+    transform: scale(1.2);
 }
 /*!****************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/chart.css ***!
@@ -262,7 +277,6 @@ div#button-div {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* background-image: url("../src/images/galaxy-jpg.jpg"); */
     width: 100%;
     margin-right: 15px;
 }
