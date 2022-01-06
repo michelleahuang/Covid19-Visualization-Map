@@ -33,6 +33,7 @@ div#button-div button {
     padding: 10px 5px;
     margin-top: 10px;
     margin-left: 10px;
+    margin-bottom: 10px;
 }
 
 canvas#chart {
