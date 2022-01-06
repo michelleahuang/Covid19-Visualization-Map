@@ -1,8 +1,8 @@
 # COVID-19 World Data Visualization 
 
-## Background
-
 Live Site: [COVID-19 World Visualization Map](https://michelleahuang.github.io/Covid19-Visualization-Map/)
+
+## Background
 
 Since its emergence, COVID-19 has greatly impacted the state of the world. This interactive site aims to visualize the rise in COVID-19 cases in different countries around the world, starting from 2020, when the virus first started to spread, to the end of the year 2021. Click on a specific country on the globe to view its rise in cases over the last two years!
 
@@ -12,6 +12,32 @@ In the COVID-19 World Data Visualization, users will be able to:
 - Zoom in and out of the globe with their mouse to better click on and see the countries' dots 
 - Interact with the globe with their mouse by dragging it to see another face of the Earth
 - Select a country on the globe by clicking on its dot to see its COVID-19 line graph
+```javascript
+function onClick(e) {
+            let domRect = renderer.domElement.getBoundingClientRect();
+            mouse.x = ((e.clientX - domRect.left) / (domRect.right - domRect.left)) * 2 - 1;
+            mouse.y = -((e.clientY - domRect.top) / (domRect.bottom - domRect.top)) * 2 + 1;
+            raycaster.setFromCamera(mouse, camera);
+
+            let intersects = raycaster.intersectObjects(clouds.children);
+            for (let i = 0; i < intersects.length; i++) {
+
+                let country = intersects[0].object.userData.country;
+                let province = intersects[0].object.userData.provinceState;
+
+                const ctx = document.getElementById("chart").getContext("2d");
+            
+                createChart(ctx, country, province);
+
+                let lineGraphContainer = document.getElementById("line-graph");
+                lineGraphContainer.classList.remove("line-graph-hidden");
+
+                let instructionsBox = document.getElementById("instructions");
+                instructionsBox.classList.add("instructions-box-hidden");     
+                
+            }
+        }
+```
 - Hover over the country's dot and it will enlarge and change in color
 - Hover over the country's dot and the country's name will show
 - Toggle between the year 2020 and 2021 to see the country's data for each year
