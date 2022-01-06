@@ -36,12 +36,11 @@ function onClick(e) {
             }
 }
 ```
+- Toggle between the year 2020 and 2021 to see the country's data for each year
 - Hover over the country's dot and it will enlarge and change in color
 - Hover over the country's dot and the country's name will show
 
-    ![](src/images/demo.gif)
-
-- Toggle between the year 2020 and 2021 to see the country's data for each year
+![](src/images/demo.gif)
 
 In addition, this project will include:
 - A production README
