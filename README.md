@@ -14,9 +14,6 @@ In the COVID-19 World Data Visualization, users will be able to:
 - Select a country on the globe by clicking on its dot to see its COVID-19 line graph
 ```javascript
 function onClick(e) {
-            let domRect = renderer.domElement.getBoundingClientRect();
-            mouse.x = ((e.clientX - domRect.left) / (domRect.right - domRect.left)) * 2 - 1;
-            mouse.y = -((e.clientY - domRect.top) / (domRect.bottom - domRect.top)) * 2 + 1;
             raycaster.setFromCamera(mouse, camera);
 
             let intersects = raycaster.intersectObjects(clouds.children);
