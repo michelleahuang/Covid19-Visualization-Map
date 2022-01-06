@@ -21,7 +21,6 @@ function onClick(e) {
 
             let intersects = raycaster.intersectObjects(clouds.children);
             for (let i = 0; i < intersects.length; i++) {
-
                 let country = intersects[0].object.userData.country;
                 let province = intersects[0].object.userData.provinceState;
 
@@ -34,12 +33,14 @@ function onClick(e) {
 
                 let instructionsBox = document.getElementById("instructions");
                 instructionsBox.classList.add("instructions-box-hidden");     
-                
             }
         }
 ```
 - Hover over the country's dot and it will enlarge and change in color
 - Hover over the country's dot and the country's name will show
+
+![](src/images/demo.gif)
+
 - Toggle between the year 2020 and 2021 to see the country's data for each year
 
 In addition, this project will include:
