@@ -17,7 +17,8 @@ a {
 
 #data-source {
     color: white;
-    padding: 10px;
+    bottom: 0px;
+    /* padding: 10px; */
     margin-left: 10px;
 }
 
@@ -31,6 +32,11 @@ a {
 }
 
 #linkedin {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#angelist {
     margin-left: 10px;
     margin-right: 10px;
 }
