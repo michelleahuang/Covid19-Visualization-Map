@@ -12,11 +12,12 @@ h1 {
     font-weight: 500;
     color: white;
     margin-top: 20px;
+    /* margin-top: 18vh; */
 }
 
 #main-body {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     margin-right: 5vh;
 }
