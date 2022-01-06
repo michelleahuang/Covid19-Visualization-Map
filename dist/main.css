@@ -199,6 +199,7 @@ button {
 
 div#acknowledgement, div#personal-links {
     position: relative;
+    align-self: baseline;
 }
 
 a {
