@@ -260,7 +260,7 @@ a {
 }
 
 div#line-graph {
-    /* border: 1px solid white; */
+    border: 1px solid white;
     margin: 5px;
     min-width: 400px;
     min-height: 400px;
@@ -268,7 +268,7 @@ div#line-graph {
 
 div#chart-button-container {
     display:flex;
-    width: 90%;
+    width: 85%;
     height: 100%;
     margin-right: 10px;
 }
@@ -276,6 +276,7 @@ div#chart-button-container {
 div#button-div {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     width: 100%;
     margin-right: 15px;
@@ -285,7 +286,7 @@ div#button-div button {
     width: 70px;
     padding: 10px 5px;
     margin-top: 10px;
-    margin-right: 20px;
+    margin-left: 10px;
 }
 
 canvas#chart {
