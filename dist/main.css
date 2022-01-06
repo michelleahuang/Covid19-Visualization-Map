@@ -66,8 +66,8 @@ h1 {
     font-size: 50px;
     font-weight: 500;
     color: white;
-    /* margin-top: 20px; */
-    margin-top: 5vh;
+    margin-top: 20px;
+    /* margin-top: 5vh; */
 }
 
 #main-body {
@@ -260,7 +260,7 @@ a {
 }
 
 div#line-graph {
-    border: 1px solid white;
+    /* border: 1px solid white; */
     margin: 5px;
     min-width: 400px;
     min-height: 400px;
