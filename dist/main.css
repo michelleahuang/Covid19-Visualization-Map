@@ -56,8 +56,9 @@ table {
 body {
     background-image: url("../src/images/galaxy-jpg.jpg");
     font-family: 'Oswald', sans-serif;
-    margin: auto;
-    vertical-align: middle;
+    /* /* margin: auto; */
+    vertical-align: middle; 
+    height: 100%;
 }
 
 h1 {
@@ -166,7 +167,7 @@ button {
 }
 
 #header-nav {
-    border: 1px solid white;
+    /* border: 1px solid white; */
     display: flex;
     justify-content: center;
     width: 350px;
@@ -209,7 +210,7 @@ a {
 
 #data-source {
     color: white;
-    font-size: 17px;
+    font-size: 18px;
     margin-left: 10px;
     bottom: 0;
 }
@@ -243,7 +244,7 @@ a {
 }
 
 div#line-graph {
-    border: 1px solid white;
+    /* border: 1px solid white; */
     margin: 5px;
     min-width: 400px;
     min-height: 400px;

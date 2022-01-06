@@ -1,8 +1,9 @@
 body {
     background-image: url("../src/images/galaxy-jpg.jpg");
     font-family: 'Oswald', sans-serif;
-    margin: auto;
-    vertical-align: middle;
+    /* /* margin: auto; */
+    vertical-align: middle; 
+    height: 100%;
 }
 
 h1 {

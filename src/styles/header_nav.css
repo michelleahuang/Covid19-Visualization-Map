@@ -6,7 +6,7 @@ button {
 }
 
 #header-nav {
-    border: 1px solid white;
+    /* border: 1px solid white; */
     display: flex;
     justify-content: center;
     width: 350px;
