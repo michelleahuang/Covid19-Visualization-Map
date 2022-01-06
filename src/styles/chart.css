@@ -38,3 +38,12 @@ canvas#chart {
     border-color: #659BDF;
 }
 
+/* @media screen and (max-width: 1313px) {
+    #line-graph {
+        display: flex;
+        flex-direction: column;
+    }
+} */
+
+/* @media screen and (min-width:) {
+} */

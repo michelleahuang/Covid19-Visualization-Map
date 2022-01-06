@@ -1,7 +1,14 @@
 #footer-nav {
+    position: fixed;
     display: flex;
     justify-content: space-between;
     font-family: 'Oswald', sans-serif;
+    bottom: 0px;
+    width: 100vw;
+}
+
+div#acknowledgement, div#personal-links {
+    position: relative;
 }
 
 a {

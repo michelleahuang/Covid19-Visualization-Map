@@ -89,9 +89,12 @@ a {
     left: 40%;
 }  */
 
-@media screen and (max-width: 900px) {
+/* @media screen and (max-width: 900px) {
     #main-body {
         display: flex;
         flex-direction: column;
+        /* margin-bottom: 5vh; */
+        /* margin-bottom: 15px;
     }
-}
+
+} */ 

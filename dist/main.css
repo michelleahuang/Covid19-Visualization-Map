@@ -144,12 +144,15 @@ a {
     left: 40%;
 }  */
 
-@media screen and (max-width: 900px) {
+/* @media screen and (max-width: 900px) {
     #main-body {
         display: flex;
         flex-direction: column;
+        /* margin-bottom: 5vh; */
+        /* margin-bottom: 15px;
     }
-}
+
+} */ 
 /*!*********************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/header_nav.css ***!
   \*********************************************************************************************************/
@@ -184,9 +187,16 @@ button {
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/footer_nav.css ***!
   \*********************************************************************************************************/
 #footer-nav {
+    position: fixed;
     display: flex;
     justify-content: space-between;
     font-family: 'Oswald', sans-serif;
+    bottom: 0px;
+    width: 100vw;
+}
+
+div#acknowledgement, div#personal-links {
+    position: relative;
 }
 
 a {
@@ -255,7 +265,15 @@ canvas#chart {
     border-color: #659BDF;
 }
 
+/* @media screen and (max-width: 1313px) {
+    #line-graph {
+        display: flex;
+        flex-direction: column;
+    }
+} */
 
+/* @media screen and (min-width:) {
+} */
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
