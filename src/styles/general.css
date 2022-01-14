@@ -24,8 +24,9 @@ h1 {
 #instructions {
     border: 1px solid white;
     color: white;
-    background-color: blue;
-    opacity: 50%;
+    /* background-color: blue; */
+    /* opacity: 80%; */
+    background-color: rgba(0, 0, 255, 0.6);
     height: 50%;
     width: 650px; 
     text-align: center; 
