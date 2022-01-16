@@ -93,7 +93,8 @@ export async function createChart(ctx, country, province) {
             maintainAspectRatio: false,
         }
     });
-    debugger
+
+
     chartButtons2020(myChart, twentyTwenty, countryCovid2020);
     chartButtons2021(myChart, twentyTwentyOne, countryCovid2021);
 }
