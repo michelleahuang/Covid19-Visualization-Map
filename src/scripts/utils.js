@@ -1,3 +1,9 @@
+let myChartGlobal;
+let twentyTwentyGlobal;
+let countryCovid2020Global;
+let twentyTwentyOneGlobal;
+let countryCovid2021Global;
+
 export function instructions() {
     let instructionsButton = document.getElementById("instructions-button");
 
@@ -11,127 +17,58 @@ export function instructions() {
     })
 }
 
+function create2020Chart (e) {
+    let chartButton2020 = document.getElementById("2020");
+
+    if (chartButton2020.value === "2020") {
+        myChartGlobal.config.data.labels = twentyTwentyGlobal;
+        myChartGlobal.config.data.datasets[0].data = countryCovid2020Global;
+        myChartGlobal.config.options.scales.x.title.text = "Days in " + chartButton2020.value;
+    }
+    myChartGlobal.update();
+    chartButton2020.classList.add("chart-button-selected")
+
+    let chartButton2021 = document.getElementById("2021");
+    chartButton2021.classList.remove("chart-button-selected");
+}
+
 export function chartButtons2020(myChart, twentyTwenty, countryCovid2020) {
     let chartButton2020 = document.getElementById("2020");
     chartButton2020.classList.remove("chart-button-selected")
-    let eventListenerFlag = false;
 
-    if (eventListenerFlag) {
-        chartButton2020.removeEventListener("click", create2020Chart);
-    }
+    myChartGlobal = myChart;
+    twentyTwentyGlobal = twentyTwenty;
+    countryCovid2020Global = countryCovid2020;
 
-    if (chartButton2020) {
-        chartButton2020.addEventListener("click", create2020Chart);
-    }
-    
-    function create2020Chart (e) {
-        eventListenerFlag = true;
-        if (chartButton2020.value === "2020") {
-            myChart.config.data.labels = twentyTwenty;
-            myChart.config.data.datasets[0].data = countryCovid2020;
-            myChart.config.options.scales.x.title.text = "Days in " + chartButton2020.value;
-        }
-        myChart.update();
-        chartButton2020.classList.add("chart-button-selected")
+    chartButton2020.removeEventListener("click", create2020Chart);
+    chartButton2020.addEventListener("click", create2020Chart);
 
-        let chartButton2021 = document.getElementById("2021");
-        chartButton2021.classList.remove("chart-button-selected");
+}
+
+function create2021Chart (e) {
+    let chartButton2021 = document.getElementById("2021")
+    if (chartButton2021.value === "2021") {
+        myChartGlobal.config.data.labels = twentyTwentyOneGlobal;
+        myChartGlobal.config.data.datasets[0].data = countryCovid2021Global;         
+        myChartGlobal.config.options.scales.x.title.text = "Days in " + chartButton2021.value;
     }
+    myChartGlobal.update();
+    chartButton2021.classList.add("chart-button-selected")
+
+    let chartButton2020 = document.getElementById("2020");
+    chartButton2020.classList.remove("chart-button-selected");
 }
 
 export function chartButtons2021(myChart, twentyTwentyOne, countryCovid2021) {
     let chartButton2021 = document.getElementById("2021")
     chartButton2021.classList.remove("chart-button-selected")
-    let eventListenerFlag = false;
 
-    if (eventListenerFlag) {
-        chartButton2021.removeEventListener("click", create2021Chart);
-    }
+    myChartGlobal = myChart;
+    twentyTwentyOneGlobal = twentyTwentyOne;
+    countryCovid2021Global = countryCovid2021;
 
-    if (chartButton2021) {
-        chartButton2021.addEventListener("click", create2021Chart);
-    }
+    chartButton2021.removeEventListener("click", create2021Chart);
+    chartButton2021.addEventListener("click", create2021Chart);
     
-    function create2021Chart (e) {
-        eventListenerFlag = true;
-        if (chartButton2021.value === "2021") {
-            myChart.config.data.labels = twentyTwentyOne;
-            myChart.config.data.datasets[0].data = countryCovid2021;         
-            myChart.config.options.scales.x.title.text = "Days in " + chartButton2021.value;
-        }
-        myChart.update();
-        chartButton2021.classList.add("chart-button-selected")
-
-        let chartButton2020 = document.getElementById("2020");
-        chartButton2020.classList.remove("chart-button-selected");
-    }
 }
 
-
-
-
-// Testing
-/*
-export function chartButtons2020(myChart, twentyTwenty, countryCovid2020) {
-    let chartDiv = document.getElementById("chart-button-container")
-
-    let chartButton2020 = document.getElementById("2020");
-    chartButton2020.classList.remove("chart-button-selected")
-    let eventListenerFlag = false;
-
-    if (eventListenerFlag) {
-        chartDiv.removeEventListener("click", create2020Chart);
-    }
-
-    if (chartButton2020) {
-        chartDiv.addEventListener("click", create2020Chart);
-    }
-    
-    function create2020Chart (e) {
-        eventListenerFlag = true;
-
-        if (e.target.id === "2020") {
-            myChart.config.data.labels = twentyTwenty;
-            myChart.config.data.datasets[0].data = countryCovid2020;
-            myChart.config.options.scales.x.title.text = "Days in " + e.target.value;
-        }
-        myChart.update();
-        e.target.classList.add("chart-button-selected")
-
-        let chartButton2021 = document.getElementById("2021");
-        chartButton2021.classList.remove("chart-button-selected");
-    }
-}
-
-export function chartButtons2021(myChart, twentyTwentyOne, countryCovid2021) {
-    let chartDiv = document.getElementById("chart-button-container")
-
-    let chartButton2021 = document.getElementById("2021")
-    chartButton2021.classList.remove("chart-button-selected")
-    let eventListenerFlag = false;
-
-    if (eventListenerFlag) {
-        chartDiv.removeEventListener("click", create2021Chart);
-    }
-
-    if (chartButton2021) {
-        chartDiv.addEventListener("click", create2021Chart);
-    }
-
-    
-    function create2021Chart (e) {
-        eventListenerFlag = true;
-
-        if (e.target.id === "2021") {
-            myChart.config.data.labels = twentyTwentyOne;
-            myChart.config.data.datasets[0].data = countryCovid2021;         
-            myChart.config.options.scales.x.title.text = "Days in " + e.target.value;
-        }
-        myChart.update();
-        e.target.classList.add("chart-button-selected")
-
-        let chartButton2020 = document.getElementById("2020");
-        chartButton2020.classList.remove("chart-button-selected");
-    }
-}
-*/
