@@ -2,6 +2,8 @@
 
 Live Site: [COVID-19 World Visualization Map](https://michelleahuang.github.io/Covid19-Visualization-Map/)
 
+![](src/images/demo.gif)
+
 ## Background
 
 Since its emergence, COVID-19 has greatly impacted the state of the world. This interactive site aims to visualize the rise in COVID-19 cases in different countries around the world, starting from 2020, when the virus first started to spread, to the end of the year 2021. Click on a specific country on the globe to view its rise in cases over the last two years!
@@ -36,8 +38,6 @@ function onClick(e) {
 - Toggle between the year 2020 and 2021 to see the country's data for each year
 - Hover over the country's dot and it will enlarge and change in color
 - Hover over the country's dot and the country's name will show
-
-![](src/images/demo.gif)
 
 In addition, this project will include:
 - A production README
