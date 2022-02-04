@@ -1,6 +1,3 @@
-/*!****************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/reset.css ***!
-  \****************************************************************************************************/
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -50,9 +47,6 @@ table {
 	border-spacing: 0;
 }
 
-/*!******************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/general.css ***!
-  \******************************************************************************************************/
 body {
     background-image: url("../src/images/galaxy-jpg.jpg");
     font-family: 'Oswald', sans-serif;
@@ -160,9 +154,6 @@ a {
     }
 } 
 
-/*!*********************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/header_nav.css ***!
-  \*********************************************************************************************************/
 button {
     font-family: 'Oswald', sans-serif;
     font-weight: 300;
@@ -191,9 +182,6 @@ button {
     margin-left: 10px;
     padding: 10px 15px;
 }
-/*!*********************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/footer_nav.css ***!
-  \*********************************************************************************************************/
 #footer-nav {
     position: fixed;
     display: flex;
@@ -252,9 +240,6 @@ a {
 #angelist:hover {
     transform: scale(1.2);
 }
-/*!****************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/chart.css ***!
-  \****************************************************************************************************/
 #line-graph {
     background-color: transparent; 
     width: 50%;
@@ -310,7 +295,6 @@ canvas#chart {
 }
 
 
-/*!*************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
-  \*************************************************************************************************************************************/
 
+
+/*# sourceMappingURL=main.css.map*/
