@@ -54,7 +54,7 @@ In addition, this project will include:
 ## Technologies, Libraries, APIs
 
 This project will be implemented with the following technologies:
-- [Three.js](https://d3js.org/) to render the world globe
+- [Three.js](https://threejs.org/) to render the world globe
 - [Chart.js](https://www.chartjs.org/) to render data visualization charts
 - `Webpack` and `Babel` to bundle and transpile the source JavaScript code
 - `npm` to manage project dependencies 
